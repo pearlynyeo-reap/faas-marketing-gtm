@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Colours, Brand & Fonts — Reap Design System</title>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<style>
+:root{--sidebar-w:224px;--header-h:60px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:#141C1C;font-family:var(--font-text)}
+
+/* ── Header ── */
+.docs-header{
+  position:sticky;top:0;z-index:200;height:var(--header-h);
+  background:#fff;border-bottom:1px solid var(--ttg-200);
+  display:flex;align-items:center
+}
+.docs-header-logo{
+  width:var(--sidebar-w);flex-shrink:0;display:flex;align-items:center;gap:12px;
+  padding:0 20px;height:100%;border-right:1px solid var(--ttg-200)
+}
+.docs-header-logo img{height:24px;display:block}
+.docs-header-right{
+  flex:1;display:flex;align-items:center;justify-content:space-between;padding:0 32px
+}
+.docs-header-right .breadcrumb{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ttg-500)
+}
+.back-link{
+  display:flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ttg-600);text-decoration:none;
+  padding:6px 14px;border-radius:9999px;border:1px solid var(--ttg-200);
+  transition:background .12s,color .12s
+}
+.back-link:hover{background:var(--ttg-100);color:#141C1C}
+
+/* ── Layout ── */
+.page-wrap{max-width:1120px;margin:0 auto;padding:52px 56px 100px}
+
+/* ── Page hero ── */
+.page-hero{margin-bottom:64px}
+.page-tag{
+  display:inline-block;padding:4px 12px;border-radius:9999px;
+  background:var(--violet-100);color:var(--violet-500);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:18px
+}
+.page-title{
+  font-family:var(--font-display);font-weight:700;font-size:44px;
+  line-height:1.05;letter-spacing:-.02em;color:#141C1C;margin:0 0 12px
+}
+.page-subtitle{
+  font-size:16px;line-height:1.55;color:var(--ttg-600);max-width:600px;margin:0
+}
+
+/* ── Section headings ── */
+.section{margin-bottom:72px}
+.section-header{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--ttg-200)}
+.section-title{
+  font-family:var(--font-display);font-weight:700;font-size:26px;
+  letter-spacing:-.015em;color:#141C1C;margin:0
+}
+.section-tag{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ttg-400)
+}
+.sub-heading{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ttg-500);margin:28px 0 12px
+}
+.sub-heading:first-child{margin-top:0}
+
+/* ── Color swatches ── */
+.swatch-scale{display:flex;gap:3px;margin-bottom:4px}
+.swatch{
+  flex:1;border-radius:8px;padding:10px 10px 8px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:72px;cursor:default
+}
+.swatch .step{font-family:var(--font-display);font-weight:700;font-size:12px;line-height:1}
+.swatch .hex{font-family:var(--font-mono);font-size:9px;letter-spacing:.04em;margin-top:4px;opacity:.8}
+.swatch.hero-swatch{outline:2px solid #141C1C;outline-offset:2px;z-index:1}
+
+/* Hero brand color blocks */
+.brand-colors{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:4px}
+.brand-color{
+  border-radius:12px;padding:18px 16px 14px;
+  display:flex;flex-direction:column;justify-content:space-between;min-height:100px
+}
+.brand-color .bc-name{font-family:var(--font-display);font-weight:700;font-size:14px;line-height:1.2}
+.brand-color .bc-token{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;margin-top:4px;opacity:.7}
+.brand-color .bc-hex{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;margin-top:6px}
+
+/* Semantic tokens table */
+.token-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.token-row{
+  display:flex;align-items:center;gap:12px;padding:10px 14px;
+  border:1px solid var(--ttg-200);border-radius:8px
+}
+.token-dot{width:28px;height:28px;border-radius:6px;flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
+.token-info{flex:1;min-width:0}
+.token-name{font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:#141C1C;font-weight:500}
+.token-desc{font-size:11px;color:var(--ttg-500);margin-top:1px}
+
+/* ── Color pairing pills ── */
+.pairings{display:flex;flex-wrap:wrap;gap:10px}
+.pair{
+  display:flex;align-items:center;border-radius:9999px;overflow:hidden;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;
+  box-shadow:0 1px 3px rgba(11,15,15,.10)
+}
+.pair-a{padding:6px 14px 6px 14px}
+.pair-b{padding:6px 14px 6px 14px}
+.pair-label{font-size:9px;opacity:.6}
+
+/* ── Font specimens ── */
+.font-card{
+  border:1px solid var(--ttg-200);border-radius:16px;overflow:hidden;margin-bottom:12px
+}
+.font-card-header{
+  padding:14px 20px;border-bottom:1px solid var(--ttg-100);
+  display:flex;align-items:center;justify-content:space-between
+}
+.font-card-name{font-family:var(--font-display);font-weight:700;font-size:14px}
+.font-card-meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ttg-500)}
+.font-card-body{padding:24px 20px}
+.specimen-xl{
+  font-family:var(--font-display);font-weight:700;font-size:52px;
+  line-height:.95;letter-spacing:-.03em;color:#141C1C
+}
+.specimen-xl.inky{font-family:var(--font-display-inky)}
+.specimen-xl.italic{font-family:var(--font-display);font-weight:300;font-style:italic;font-size:48px}
+.specimen-xl.mono{font-family:var(--font-mono);font-weight:400;font-size:40px;letter-spacing:.02em}
+.specimen-sub{
+  font-size:13px;color:var(--ttg-500);margin-top:10px;font-family:var(--font-text)
+}
+
+/* Weight row */
+.weights{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px;padding-top:18px;border-top:1px solid var(--ttg-100)}
+.wt-cell{display:flex;flex-direction:column;gap:3px}
+.wt-sample{font-family:var(--font-display);font-size:20px;line-height:1;letter-spacing:-.01em;color:#141C1C}
+.wt-sample.inky-s{font-family:var(--font-display-inky)}
+.wt-sample.mono-s{font-family:var(--font-mono);font-size:18px;letter-spacing:.02em}
+.wt-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ttg-400)}
+
+/* Type scale table */
+.type-scale{display:grid;grid-template-columns:120px 1fr;gap:0;border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden}
+.ts-row{display:contents}
+.ts-row > *{padding:12px 16px;border-bottom:1px solid var(--ttg-100)}
+.ts-row:last-child > *{border-bottom:0}
+.ts-label{
+  display:flex;flex-direction:column;gap:2px;justify-content:center;
+  background:var(--ttg-100);border-right:1px solid var(--ttg-200)
+}
+.ts-name{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ttg-700);font-weight:500}
+.ts-size{font-family:var(--font-mono);font-size:9px;color:var(--ttg-500)}
+.ts-sample{display:flex;align-items:center}
+
+/* ── Logo section ── */
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.logo-tile{
+  border-radius:14px;padding:28px 24px;
+  display:flex;flex-direction:column;gap:16px;
+  align-items:flex-start
+}
+.logo-tile img{display:block}
+.logo-tile .logo-desc{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:inherit;opacity:.5}
+.logo-wht{filter:brightness(0) invert(1)}
+.logo-blk{filter:brightness(0)}
+
+/* ── Footer ── */
+.page-footer{
+  border-top:1px solid var(--ttg-200);margin-top:80px;padding-top:28px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ttg-400)
+}
+.page-footer img{height:18px;opacity:.4}
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="docs-header">
+  <div class="docs-header-logo">
+    <img src="assets/reap-lockup-blk.svg" alt="Reap"/>
+  </div>
+  <div class="docs-header-right">
+    <span class="breadcrumb">Brand Foundations</span>
+    <a href="index.html" class="back-link">
+      <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Design System
+    </a>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <!-- ── Hero ── -->
+  <div class="page-hero">
+    <span class="page-tag">Brand Foundations</span>
+    <h1 class="page-title">Colours, Brand &amp; Fonts</h1>
+    <p class="page-subtitle">The core building blocks of Reap's visual identity — color tokens, brand palette, typographic system, and logo usage.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 · COLOURS
+  ══════════════════════════════════════ -->
+  <section class="section" id="colours">
+    <div class="section-header">
+      <h2 class="section-title">Colours</h2>
+      <span class="section-tag">Palette · Tokens · Pairings</span>
+    </div>
+
+    <!-- Brand palette -->
+    <div class="sub-heading">Core brand palette</div>
+    <div class="brand-colors">
+      <div class="brand-color" style="background:#141C1C;color:#fff">
+        <div>
+          <div class="bc-name">Reap Black</div>
+          <div class="bc-token">--ttg-900</div>
+        </div>
+        <div class="bc-hex">#141C1C</div>
+      </div>
+      <div class="brand-color" style="background:#71F7EC;color:#003B36">
+        <div>
+          <div class="bc-name">Teal</div>
+          <div class="bc-token">--teal-400 · Hero</div>
+        </div>
+        <div class="bc-hex">#71F7EC</div>
+      </div>
+      <div class="brand-color" style="background:#42006B;color:#fff">
+        <div>
+          <div class="bc-name">Violet Deep</div>
+          <div class="bc-token">--violet-700 · Hero secondary</div>
+        </div>
+        <div class="bc-hex">#42006B</div>
+      </div>
+      <div class="brand-color" style="background:#7E22CE;color:#fff">
+        <div>
+          <div class="bc-name">Violet Bright</div>
+          <div class="bc-token">--violet-500 · App / UI</div>
+        </div>
+        <div class="bc-hex">#7E22CE</div>
+      </div>
+      <div class="brand-color" style="background:#fff;color:#141C1C;border:1px solid var(--ttg-200)">
+        <div>
+          <div class="bc-name">White</div>
+          <div class="bc-token">--reap-white</div>
+        </div>
+        <div class="bc-hex">#FFFFFF</div>
+      </div>
+    </div>
+
+    <!-- Teal scale -->
+    <div class="sub-heading" style="margin-top:36px">Teal — primary scale</div>
+    <div class="swatch-scale">
+      <div class="swatch" style="background:#002926;color:#fff"><span class="step">1000</span><span class="hex">#002926</span></div>
+      <div class="swatch" style="background:#004D47;color:#fff"><span class="step">900</span><span class="hex">#004D47</span></div>
+      <div class="swatch" style="background:#007F76;color:#fff"><span class="step">800</span><span class="hex">#007F76</span></div>
+      <div class="swatch" style="background:#16A59B;color:#fff"><span class="step">700</span><span class="hex">#16A59B</span></div>
+      <div class="swatch" style="background:#2CCBC0;color:#003B36"><span class="step">600</span><span class="hex">#2CCBC0</span></div>
+      <div class="swatch" style="background:#4DECE0;color:#003B36"><span class="step">500</span><span class="hex">#4DECE0</span></div>
+      <div class="swatch hero-swatch" style="background:#71F7EC;color:#003B36"><span class="step">400</span><span class="hex">#71F7EC</span></div>
+      <div class="swatch" style="background:#91F9F1;color:#003B36"><span class="step">300</span><span class="hex">#91F9F1</span></div>
+      <div class="swatch" style="background:#B8FBF5;color:#003B36"><span class="step">200</span><span class="hex">#B8FBF5</span></div>
+      <div class="swatch" style="background:#E3FFFD;color:#003B36"><span class="step">100</span><span class="hex">#E3FFFD</span></div>
+    </div>
+
+    <!-- Violet scale -->
+    <div class="sub-heading">Violet — premium / features</div>
+    <div class="swatch-scale">
+      <div class="swatch" style="background:#2D004A;color:#fff"><span class="step">900</span><span class="hex">#2D004A</span></div>
+      <div class="swatch" style="background:#370059;color:#fff"><span class="step">800</span><span class="hex">#370059</span></div>
+      <div class="swatch hero-swatch" style="background:#42006B;color:#fff"><span class="step">700</span><span class="hex">#42006B</span></div>
+      <div class="swatch" style="background:#5F198E;color:#fff"><span class="step">600</span><span class="hex">#5F198E</span></div>
+      <div class="swatch" style="background:#7E22CE;color:#fff"><span class="step">500</span><span class="hex">#7E22CE</span></div>
+      <div class="swatch" style="background:#A855F7;color:#fff"><span class="step">400</span><span class="hex">#A855F7</span></div>
+      <div class="swatch" style="background:#C084FC;color:#42006B"><span class="step">300</span><span class="hex">#C084FC</span></div>
+      <div class="swatch" style="background:#E9D5FF;color:#42006B"><span class="step">200</span><span class="hex">#E9D5FF</span></div>
+      <div class="swatch" style="background:#F5EFFF;color:#42006B"><span class="step">100</span><span class="hex">#F5EFFF</span></div>
+    </div>
+
+    <!-- TealTinedGrey -->
+    <div class="sub-heading">TealTinedGrey — branded neutrals</div>
+    <div class="swatch-scale">
+      <div class="swatch" style="background:#0B0F0F;color:#fff"><span class="step">1000</span><span class="hex">#0B0F0F</span></div>
+      <div class="swatch hero-swatch" style="background:#141C1C;color:#fff"><span class="step">900</span><span class="hex">#141C1C</span></div>
+      <div class="swatch" style="background:#2D3838;color:#fff"><span class="step">800</span><span class="hex">#2D3838</span></div>
+      <div class="swatch" style="background:#455454;color:#fff"><span class="step">700</span><span class="hex">#455454</span></div>
+      <div class="swatch" style="background:#5C7070;color:#fff"><span class="step">600</span><span class="hex">#5C7070</span></div>
+      <div class="swatch" style="background:#809494;color:#fff"><span class="step">500</span><span class="hex">#809494</span></div>
+      <div class="swatch" style="background:#A3B8B8;color:#141C1C"><span class="step">400</span><span class="hex">#A3B8B8</span></div>
+      <div class="swatch" style="background:#C7D6D6;color:#141C1C"><span class="step">300</span><span class="hex">#C7D6D6</span></div>
+      <div class="swatch" style="background:#E1EBEB;color:#141C1C"><span class="step">200</span><span class="hex">#E1EBEB</span></div>
+      <div class="swatch" style="background:#F2F7F7;color:#141C1C"><span class="step">100</span><span class="hex">#F2F7F7</span></div>
+    </div>
+
+    <!-- Secondary scales -->
+    <div class="sub-heading">Secondary scales</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+
+      <!-- Blue -->
+      <div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ttg-500);margin-bottom:6px">Blue · Reap Connect</div>
+        <div class="swatch-scale" style="gap:3px">
+          <div class="swatch" style="background:#1A2E70;color:#fff"><span class="step">900</span><span class="hex">#1A2E70</span></div>
+          <div class="swatch hero-swatch" style="background:#2A40A3;color:#fff"><span class="step">700</span><span class="hex">#2A40A3</span></div>
+          <div class="swatch" style="background:#4469FF;color:#fff"><span class="step">500</span><span class="hex">#4469FF</span></div>
+          <div class="swatch" style="background:#94A8FF;color:#1A2E70"><span class="step">300</span><span class="hex">#94A8FF</span></div>
+          <div class="swatch" style="background:#D6DEFF;color:#1A2E70"><span class="step">100</span><span class="hex">#D6DEFF</span></div>
+        </div>
+      </div>
+
+      <!-- Peach -->
+      <div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ttg-500);margin-bottom:6px">Peach · Direct · Warm</div>
+        <div class="swatch-scale" style="gap:3px">
+          <div class="swatch" style="background:#5C3F00;color:#fff"><span class="step">900</span><span class="hex">#5C3F00</span></div>
+          <div class="swatch hero-swatch" style="background:#B37E36;color:#fff"><span class="step">700</span><span class="hex">#B37E36</span></div>
+          <div class="swatch" style="background:#FFC680;color:#5C3F00"><span class="step">500</span><span class="hex">#FFC680</span></div>
+          <div class="swatch" style="background:#FFDFB3;color:#5C3F00"><span class="step">300</span><span class="hex">#FFDFB3</span></div>
+          <div class="swatch" style="background:#FFF3E0;color:#5C3F00"><span class="step">100</span><span class="hex">#FFF3E0</span></div>
+        </div>
+      </div>
+
+      <!-- Mint -->
+      <div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ttg-500);margin-bottom:6px">Mint · Success · Agentic</div>
+        <div class="swatch-scale" style="gap:3px">
+          <div class="swatch" style="background:#003B1F;color:#fff"><span class="step">900</span><span class="hex">#003B1F</span></div>
+          <div class="swatch hero-swatch" style="background:#00B36B;color:#fff"><span class="step">700</span><span class="hex">#00B36B</span></div>
+          <div class="swatch" style="background:#60FFB0;color:#003B1F"><span class="step">500</span><span class="hex">#60FFB0</span></div>
+          <div class="swatch" style="background:#A2FFD1;color:#003B1F"><span class="step">300</span><span class="hex">#A2FFD1</span></div>
+          <div class="swatch" style="background:#DAFFF0;color:#003B1F"><span class="step">100</span><span class="hex">#DAFFF0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semantic tokens -->
+    <div class="sub-heading" style="margin-top:36px">Semantic tokens</div>
+    <div class="token-grid">
+      <div class="token-row">
+        <div class="token-dot" style="background:#71F7EC"></div>
+        <div class="token-info">
+          <div class="token-name">--accent-primary</div>
+          <div class="token-desc">teal-400 · Hero accent</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#42006B"></div>
+        <div class="token-info">
+          <div class="token-name">--accent-secondary</div>
+          <div class="token-desc">violet-700 · Hero secondary</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#4469FF"></div>
+        <div class="token-info">
+          <div class="token-name">--info</div>
+          <div class="token-desc">blue-500 · Informational</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#60FFB0"></div>
+        <div class="token-info">
+          <div class="token-name">--success</div>
+          <div class="token-desc">mint-500 · Success state</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#FFC680"></div>
+        <div class="token-info">
+          <div class="token-name">--warning</div>
+          <div class="token-desc">peach-500 · Warning state</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#FF6B6B"></div>
+        <div class="token-info">
+          <div class="token-name">--danger</div>
+          <div class="token-desc">#FF6B6B · Error / destructive</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#141C1C"></div>
+        <div class="token-info">
+          <div class="token-name">--bg-page</div>
+          <div class="token-desc">ttg-900 · Dark page background</div>
+        </div>
+      </div>
+      <div class="token-row">
+        <div class="token-dot" style="background:#F2F7F7;border:1px solid var(--ttg-200)"></div>
+        <div class="token-info">
+          <div class="token-name">--bg-muted</div>
+          <div class="token-desc">ttg-100 · Muted surface</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colour modes -->
+    <div class="sub-heading" style="margin-top:36px">Colour modes</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border-radius:14px;overflow:hidden;border:1px solid var(--ttg-200)">
+      <div style="background:#000;color:#fff;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;min-height:160px">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#5C7070;margin-bottom:8px">Dark / Hero</div>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1">Stable by<br/><span style="color:#71F7EC">Design.</span></div>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:11px;line-height:1.4">Comms default.<br/><span style="font-size:10px;opacity:.6;display:block;margin-top:3px">bg: #000 · accent: teal.400 + violet.700</span></div>
+      </div>
+      <div style="background:#fff;color:#141C1C;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;border-left:1px solid var(--ttg-200);border-right:1px solid var(--ttg-200)">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#809494;margin-bottom:8px">Light / Product</div>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1">Move money<br/><span style="color:#42006B">globally.</span></div>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:11px;line-height:1.4;color:#5C7070">Dashboard · docs · email.<br/><span style="font-size:10px;opacity:.7;display:block;margin-top:3px">bg: #fff · nav: violet.500 · data: teal.200</span></div>
+      </div>
+      <div style="background:#42006B;color:#fff;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#C084FC;margin-bottom:8px">Signature block</div>
+          <div style="font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1">The Future<br/>of <span style="color:#71F7EC">Payments.</span></div>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:11px;line-height:1.4">Event lockups, campaigns.<br/><span style="font-size:10px;opacity:.6;display:block;margin-top:3px">block: violet.700 · accent: teal.400</span></div>
+      </div>
+    </div>
+
+    <!-- Colour pairings -->
+    <div class="sub-heading" style="margin-top:36px">Colour pairings</div>
+
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ttg-400);margin:0 0 8px">Teal · primary hero — paired with secondary colours</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#000"></div><div style="flex:1;background:#71F7EC"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Black + Teal.400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--reap-black · --teal-400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Hero canvas · all modes</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#71F7EC"></div><div style="flex:1;background:#42006B"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Teal.400 + Violet.700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--teal-400 · --violet-700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Hero headline pairing</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#71F7EC"></div><div style="flex:1;background:#4469FF"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Teal.400 + Blue.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--teal-400 · --blue-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Card Issuing · fintech</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#71F7EC"></div><div style="flex:1;background:#60FFB0"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Teal.400 + Mint.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--teal-400 · --mint-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Agentic · success states</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#71F7EC"></div><div style="flex:1;background:#FFC680"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Teal.400 + Peach.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--teal-400 · --peach-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Warmth accent</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ttg-400);margin:0 0 8px">Violet · primary premium — paired with supporting colours</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#42006B"></div><div style="flex:1;background:#71F7EC"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Violet.700 + Teal.400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--violet-700 · --teal-400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Signature block · hero</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#42006B"></div><div style="flex:1;background:#FFC680"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Violet.700 + Peach.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--violet-700 · --peach-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Direct one-pager stamp</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#42006B"></div><div style="flex:1;background:#60FFB0"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Violet.700 + Mint.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--violet-700 · --mint-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Direct feature list</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#7E22CE"></div><div style="flex:1;background:#fff;border-left:1px solid #eee"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Violet.500 + White</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--violet-500 · white</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">App sidebar · nav items</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#42006B"></div><div style="flex:1;background:#94A8FF"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Violet.700 + Blue.300</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--violet-700 · --blue-300</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Slides · editorial dark</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ttg-400);margin:0 0 8px">Product line signatures</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:20px">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#42006B"></div><div style="flex:1;background:#FFC680"></div><div style="flex:1;background:#60FFB0"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Reap Direct</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">violet.700 · peach.500 · mint.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Banking · multi-currency</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#002926"></div><div style="flex:1;background:#007F76"></div><div style="flex:1;background:#71F7EC"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Card Issuing</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">teal.1000 · teal.800 · teal.400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">CaaS · BIN sponsorship</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#2A40A3"></div><div style="flex:1;background:#4469FF"></div><div style="flex:1;background:#71F7EC"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Reap Connect</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">blue.700 · blue.500 · teal.400</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Global rails · T+0</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#000"></div><div style="flex:1;background:#2CCBC0"></div><div style="flex:1;background:#7E22CE"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">Agentic / VIC</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">black · teal.600 · violet.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">AI agents · agentic commerce</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ttg-400);margin:0 0 8px">Light mode · secondary on white or TTG.100</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px">
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#fff;border-right:1px solid #E1EBEB"></div><div style="flex:1;background:#42006B"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">White + Violet.700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">white · --violet-700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Dashboard · product UI</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#fff;border-right:1px solid #E1EBEB"></div><div style="flex:1;background:#4469FF"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">White + Blue.500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">white · --blue-500</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">CTA buttons · info links</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#F2F7F7;border-right:1px solid #E1EBEB"></div><div style="flex:1;background:#42006B"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">TTG.100 + Violet.700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--ttg-100 · --violet-700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">App bg · sidebar active</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#E1EBEB"></div><div style="flex:1;background:#141C1C"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">TTG.200 + TTG.900</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">--ttg-200 · --ttg-900</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Card surface · body text</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#fff;border-right:1px solid #E1EBEB"></div><div style="flex:1;background:#00B36B"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">White + Mint.700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">white · --mint-700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Success state · light bg</div>
+        </div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(11,15,15,.09);background:#fff;border:1px solid var(--ttg-100)">
+        <div style="height:64px;display:flex"><div style="flex:1;background:#fff;border-right:1px solid #E1EBEB"></div><div style="flex:1;background:#B37E36"></div></div>
+        <div style="padding:8px 10px">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:11px;color:#141C1C">White + Peach.700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:#809494;margin-top:2px">white · --peach-700</div>
+          <div style="font-family:var(--font-mono);font-size:8px;color:#A3B8B8;margin-top:3px">Warning · pending</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 · BRAND
+  ══════════════════════════════════════ -->
+  <section class="section" id="brand">
+    <div class="section-header">
+      <h2 class="section-title">Brand</h2>
+      <span class="section-tag">Logo · Usage · Visual identity</span>
+    </div>
+
+    <div class="sub-heading">Logo system</div>
+    <div class="logo-grid">
+      <div class="logo-tile" style="background:#141C1C">
+        <img class="logo-wht" src="assets/reap-lockup-blk.svg" alt="Reap lockup" style="height:28px"/>
+        <div class="logo-desc" style="color:#fff">Lockup — on dark</div>
+      </div>
+      <div class="logo-tile" style="background:#fff;border:1px solid var(--ttg-200)">
+        <img class="logo-blk" src="assets/reap-lockup-blk.svg" alt="Reap lockup" style="height:28px"/>
+        <div class="logo-desc" style="color:#141C1C">Lockup — on light</div>
+      </div>
+      <div class="logo-tile" style="background:#42006B">
+        <img class="logo-wht" src="assets/reap-lockup-blk.svg" alt="Reap lockup" style="height:28px"/>
+        <div class="logo-desc" style="color:#fff">Lockup — on violet</div>
+      </div>
+      <div class="logo-tile" style="background:#141C1C">
+        <img class="logo-wht" src="assets/reap-symbol-blk.svg" alt="Reap symbol" style="height:36px"/>
+        <div class="logo-desc" style="color:#fff">Symbol only — dark</div>
+      </div>
+      <div class="logo-tile" style="background:#fff;border:1px solid var(--ttg-200)">
+        <img class="logo-blk" src="assets/reap-symbol-blk.svg" alt="Reap symbol" style="height:36px"/>
+        <div class="logo-desc" style="color:#141C1C">Symbol only — light</div>
+      </div>
+      <div class="logo-tile" style="background:#141C1C">
+        <img class="logo-wht" src="assets/reap-logotype-blk.svg" alt="Reap wordmark" style="height:22px"/>
+        <div class="logo-desc" style="color:#fff">Wordmark only</div>
+      </div>
+    </div>
+
+    <!-- Logo clear space rule -->
+    <div style="margin-top:20px;padding:16px 20px;background:var(--ttg-100);border-radius:12px;display:flex;gap:16px;align-items:flex-start">
+      <div style="flex-shrink:0;width:28px;height:28px;background:var(--violet-200);border-radius:6px;display:grid;place-items:center">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="var(--violet-600)" stroke-width="1.4"/><path d="M8 7v4M8 5.5v.5" stroke="var(--violet-600)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:600;font-size:13px;margin-bottom:3px">Clear space</div>
+        <div style="font-size:12px;color:var(--ttg-600);line-height:1.5">Maintain a minimum clear space of <code style="font-family:var(--font-mono);font-size:11px;background:#fff;padding:1px 5px;border-radius:4px;border:1px solid var(--ttg-200)">0.5× logo height</code> around all sides. Never place the logo over a busy background without sufficient contrast.</div>
+      </div>
+    </div>
+
+    <!-- Product line palettes -->
+    <div class="sub-heading" style="margin-top:32px">Product line palettes</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+
+      <div style="border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden">
+        <div style="background:#42006B;padding:16px;height:60px;display:flex;align-items:flex-end">
+          <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff">Reap Direct</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#42006B;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">violet.700 · #42006B</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#FFC680;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">peach.500 · #FFC680</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#60FFB0;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">mint.500 · #60FFB0</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden">
+        <div style="background:#002926;padding:16px;height:60px;display:flex;align-items:flex-end">
+          <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff">Card Issuing</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#002926;border:1px solid var(--ttg-200);flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">teal.1000 · #002926</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#007F76;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">teal.800 · #007F76</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#71F7EC;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">teal.400 · #71F7EC</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden">
+        <div style="background:#0A1628;padding:16px;height:60px;display:flex;align-items:flex-end">
+          <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff">Reap Connect</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#2A40A3;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">blue.700 · #2A40A3</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#4469FF;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">blue.500 · #4469FF</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#71F7EC;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">teal.400 · #71F7EC</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden">
+        <div style="background:#0B0F0F;padding:16px;height:60px;display:flex;align-items:flex-end">
+          <span style="font-family:var(--font-display);font-weight:700;font-size:13px;color:#fff">VIC &amp; Agents</span>
+        </div>
+        <div style="padding:12px;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#0B0F0F;border:1px solid var(--ttg-200);flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">black · #0B0F0F</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#2CCBC0;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">teal.600 · #2CCBC0</span>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div style="width:20px;height:20px;border-radius:50%;background:#7E22CE;flex-shrink:0"></div>
+            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;color:var(--ttg-500)">violet.500 · #7E22CE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 · FONTS
+  ══════════════════════════════════════ -->
+  <section class="section" id="fonts">
+    <div class="section-header">
+      <h2 class="section-title">Fonts</h2>
+      <span class="section-tag">PolySans typeface family</span>
+    </div>
+
+    <div style="padding:16px 20px;background:var(--ttg-100);border-radius:12px;margin-bottom:28px;font-size:13px;color:var(--ttg-700);line-height:1.55">
+      Reap uses the <strong style="font-weight:600;color:#141C1C">PolySans</strong> typeface family exclusively across all brand communications. No other typefaces are permitted. The family provides four distinct roles — display, editorial, body, and mono — all from a single humanist sans-serif DNA.
+    </div>
+
+    <!-- PolySans Display -->
+    <div class="font-card">
+      <div class="font-card-header">
+        <span class="font-card-name">PolySans · Display</span>
+        <span class="font-card-meta">Headlines · Slide titles · UI labels</span>
+      </div>
+      <div class="font-card-body">
+        <div class="specimen-xl">The future of<br/>business payments.</div>
+        <div class="specimen-sub">PolySans Bulky — wt 700 · Used for all major headlines, section titles, product names, and slide content.</div>
+        <div class="weights">
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:300">Light</div>
+            <div class="wt-label">300 · Slim</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:400">Regular</div>
+            <div class="wt-label">400 · Neutral</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:500">Medium</div>
+            <div class="wt-label">500 · Median</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:700">Bold</div>
+            <div class="wt-label">700 · Bulky</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PolySans Inky -->
+    <div class="font-card">
+      <div class="font-card-header">
+        <span class="font-card-name">PolySans Inky · Editorial display</span>
+        <span class="font-card-meta">Hero headlines · Product campaigns · High-impact moments</span>
+      </div>
+      <div class="font-card-body">
+        <div class="specimen-xl inky">One account.<br/><em class="em-slim" style="color:var(--teal-400)">Every currency.</em></div>
+        <div class="specimen-sub">PolySansInky — wt 700 · High-contrast ink weight with expressive stroke variation. Reserved for hero statements and brand campaigns only.</div>
+        <div class="weights">
+          <div class="wt-cell">
+            <div class="wt-sample inky-s">Display</div>
+            <div class="wt-label">700 · Inky only</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:300;font-style:italic">Slim Italic</div>
+            <div class="wt-label">300 italic · emphasis</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PolySans Body -->
+    <div class="font-card">
+      <div class="font-card-header">
+        <span class="font-card-name">PolySans · Body / UI</span>
+        <span class="font-card-meta">Body copy · UI text · Captions · Labels</span>
+      </div>
+      <div class="font-card-body">
+        <div style="font-family:var(--font-text);font-size:18px;font-weight:400;line-height:1.55;color:#141C1C;max-width:560px">Reap gives finance teams a single platform to move money globally — from multi-currency accounts to virtual card issuing and automated payouts.</div>
+        <div class="specimen-sub">PolySans Neutral (400) / Median (500) · Used for all body text, UI components, tooltips, and supporting copy.</div>
+        <div class="weights">
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:400;font-size:18px">Regular body</div>
+            <div class="wt-label">400 · Neutral</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample" style="font-weight:500;font-size:18px">Medium body</div>
+            <div class="wt-label">500 · Median</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PolySans Mono -->
+    <div class="font-card">
+      <div class="font-card-header">
+        <span class="font-card-name">PolySans Mono · Numerics &amp; technical</span>
+        <span class="font-card-meta">Amounts · Dates · API labels · Code · Tags</span>
+      </div>
+      <div class="font-card-body">
+        <div class="specimen-xl mono">$1,284,000.00</div>
+        <div class="specimen-sub">PolySansMono — wt 400/500 · Tabular-nums enabled by default. Used for all monetary values, transaction data, API tokens, and technical labels.</div>
+        <div class="weights">
+          <div class="wt-cell">
+            <div class="wt-sample mono-s" style="font-weight:400">API · amounts · dates</div>
+            <div class="wt-label">400 · NeutralMono</div>
+          </div>
+          <div class="wt-cell">
+            <div class="wt-sample mono-s" style="font-weight:500">USD 12,500</div>
+            <div class="wt-label">500 · MedianMono</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Type scale -->
+    <div class="sub-heading" style="margin-top:32px">Type scale</div>
+    <div class="type-scale">
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">display-xl</span><span class="ts-size">128px</span></div>
+        <div class="ts-sample" style="overflow:hidden"><span style="font-family:var(--font-display-inky);font-weight:700;font-size:52px;line-height:1;letter-spacing:-.03em">Reap</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">display-l</span><span class="ts-size">96px</span></div>
+        <div class="ts-sample" style="overflow:hidden"><span style="font-family:var(--font-display-inky);font-weight:700;font-size:44px;line-height:1;letter-spacing:-.03em">Global</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">display-m</span><span class="ts-size">72px</span></div>
+        <div class="ts-sample" style="overflow:hidden"><span style="font-family:var(--font-display-inky);font-weight:700;font-size:38px;line-height:1;letter-spacing:-.02em">Payments</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">display-s</span><span class="ts-size">60px</span></div>
+        <div class="ts-sample" style="overflow:hidden"><span style="font-family:var(--font-display);font-weight:700;font-size:32px;line-height:1;letter-spacing:-.02em">Move money faster</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">h1</span><span class="ts-size">44px</span></div>
+        <div class="ts-sample"><span style="font-family:var(--font-display);font-weight:700;font-size:28px;letter-spacing:-.01em">Corporate card platform</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">h2</span><span class="ts-size">32px</span></div>
+        <div class="ts-sample"><span style="font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.005em">Multi-currency accounts</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">h3</span><span class="ts-size">24px</span></div>
+        <div class="ts-sample"><span style="font-family:var(--font-display);font-weight:500;font-size:18px">Automated payouts to 40+ countries</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">text-lg</span><span class="ts-size">18px</span></div>
+        <div class="ts-sample"><span style="font-size:18px;font-weight:400;line-height:1.5">Business banking reimagined for modern teams.</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">text-md</span><span class="ts-size">16px</span></div>
+        <div class="ts-sample"><span style="font-size:16px;font-weight:400;line-height:1.5">Default body text — one-pagers, email, product copy.</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">text-sm</span><span class="ts-size">14px</span></div>
+        <div class="ts-sample"><span style="font-size:14px;color:var(--ttg-600)">Supporting text, descriptions, UI secondary.</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">text-xs</span><span class="ts-size">12px</span></div>
+        <div class="ts-sample"><span style="font-size:12px;color:var(--ttg-500)">Captions, footnotes, data table cells.</span></div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label"><span class="ts-name">mono label</span><span class="ts-size">10–11px</span></div>
+        <div class="ts-sample"><span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ttg-500)">SECTION · KICKER · TOKEN</span></div>
+      </div>
+    </div>
+
+    <!-- Font files -->
+    <div class="sub-heading" style="margin-top:36px">Font files</div>
+    <div style="border:1px solid var(--ttg-200);border-radius:12px;overflow:hidden">
+      <div style="display:grid;grid-template-columns:1fr 100px 100px;background:var(--ttg-100);padding:8px 16px;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ttg-500);gap:8px">
+        <span>File</span><span>Weight</span><span>Role</span>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-Slim.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">300</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Italic emphasis</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-Neutral.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">400</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Body</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-Median.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">500</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">UI / medium</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-Bulky.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">700</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Display / bold</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-Inky.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">700</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Editorial hero</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid var(--ttg-100);gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-NeutralMono.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">400</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Mono / numerics</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;gap:8px;align-items:center">
+          <span style="font-family:var(--font-mono);font-size:11px;color:#141C1C">PolySansTrial-MedianMono.otf</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">500</span>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--ttg-500)">Mono / medium</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="page-footer">
+    <img src="assets/reap-lockup-blk.svg" alt="Reap"/>
+    <span>Reap Brand Foundations · Colours, Brand &amp; Fonts · 2026</span>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+</body>
+</html>

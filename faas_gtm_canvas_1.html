@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaaS Marketing GTM Tracks - Master 2026</title>
+<link rel="stylesheet" href="colors_and_type.css"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #0B0F0F;   /* ttg-1000 */
+    --surface:  #141C1C;   /* ttg-900 — Reap Black */
+    --surface2: #2D3838;   /* ttg-800 */
+    --border:   rgba(255,255,255,0.07);
+    --border2:  rgba(255,255,255,0.13);
+    --text:     #FFFFFF;   /* reap-white */
+    --muted:    #5C7070;   /* ttg-600 */
+    --subtle:   #809494;   /* ttg-500 */
+
+    --t1: #71F7EC;   /* teal-400 — hero accent */
+    --t2: #4469FF;   /* blue-500 */
+    --t3: #A855F7;   /* violet-400 */
+
+    --c1:  #71F7EC;  /* teal-400 — Foundation */
+    --c2:  #60FFB0;  /* teal-500 — Content & SEO */
+    --c3:  #4469FF;  /* blue-500 — Demand Gen */
+    --c4:  #2A40A3;  /* blue-700 — Website */
+    --c5:  #FFC680;  /* peach-500 — Offline */
+    --c6:  #FFC680;  /* peach-500 — Regional */
+    --c7:  #A855F7;  /* violet-400 — Web3 */
+    --c8:  #7E22CE;  /* violet-500 — Expansion */
+    --c9:  #60FFB0;  /* mint-500 — Measurement */
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PolySans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    padding: 56px 56px 120px;
+    min-width: 960px;
+  }
+
+  /* ── Header ── */
+  .header { margin-bottom: 64px; }
+  .eyebrow {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .header p { color: var(--subtle); font-size: 15px; max-width: 640px; line-height: 1.65; }
+
+  /* ── Tier sections ── */
+  .tier { margin-bottom: 64px; }
+  .tier-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .tier-badge {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .b1 { background: rgba(113,247,236,0.15); color: var(--t1); border: 1px solid rgba(113,247,236,0.25); }
+  .b2 { background: rgba(68,105,255,0.12); color: var(--t2); border: 1px solid rgba(68,105,255,0.22); }
+  .b3 { background: rgba(168,85,247,0.12); color: var(--t3); border: 1px solid rgba(168,85,247,0.22); }
+  .tier-title { font-size: 14px; color: var(--subtle); }
+  .tier-rule { flex: 1; height: 1px; background: var(--border); }
+
+  /* ── Track card ── */
+  .track {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+  .track-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(to right, rgba(255,255,255,0.03), transparent);
+  }
+  .track-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .track-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .track-meta {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  /* ── Track body: sub-block columns ── */
+  .track-body {
+    display: grid;
+    gap: 0;
+  }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .cols-1 { grid-template-columns: 1fr; }
+
+  .sub {
+    padding: 24px 28px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .sub:last-child { border-right: none; }
+
+  .sub-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--t1);
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(113,247,236,0.12);
+    opacity: 0.8;
+  }
+
+  .items { display: flex; flex-direction: column; gap: 8px; }
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--subtle);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+  .item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border2);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+  .item b { color: var(--text); font-weight: 500; }
+  .item.flag { color: #FF6B6B; }
+  .item.flag::before { background: rgba(255,107,107,0.55); }
+
+  /* metrics row */
+  .metrics-row {
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .metrics-label {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 14px;
+  }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .metrics-col-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--subtle);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .metric-item:last-child { border-bottom: none; }
+  .metric-name { flex: 1; line-height: 1.5; }
+  .metric-target {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--t1);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .metric-target.t2 { color: var(--t2); }
+  .metric-target.t3 { color: var(--t3); }
+  .metric-target.amber { color: #FFC680; }
+
+  /* owners row */
+  .owners-row {
+    padding: 16px 28px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .owners-label {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-right: 4px;
+  }
+  .owner-tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 99px;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    color: var(--subtle);
+    white-space: nowrap;
+  }
+  .owner-tag.primary { border-color: rgba(113,247,236,0.4); color: #71F7EC; }
+
+  /* legend */
+  .legend {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+</style>
+<style>
+  /* ── Tabs ── */
+  .tab-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+    padding-top: 16px;
+  }
+  .tab-btn {
+    font-family: 'PolySans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    border-radius: 6px 6px 0 0;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--subtle); }
+  .tab-btn.active { color: var(--text); border-bottom-color: var(--t1); }
+  .tab-btn .tab-badge {
+    font-family: 'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 99px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tab-btn.active .badge-t1-small { background: rgba(113,247,236,0.2); color: var(--t1); }
+  .tab-btn.active .badge-t2-small { background: rgba(68,105,255,0.2); color: var(--t2); }
+  .tab-btn.active .badge-t3-small { background: rgba(168,85,247,0.2); color: var(--t3); }
+  .tab-btn .badge-t1-small { background: rgba(113,247,236,0.08); color: var(--muted); }
+  .tab-btn .badge-t2-small { background: rgba(68,105,255,0.08); color: var(--muted); }
+  .tab-btn .badge-t3-small { background: rgba(168,85,247,0.08); color: var(--muted); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Reap · FaaS / Embedded Finance · H2 2026</div>
+  <h1>FaaS Marketing GTM Tracks — Master 2026</h1>
+  <p>9 tracks across 3 tiers — active now, lighter-touch parallel, and seeded for Q4 and beyond. Each track runs with a cadence; sub-blocks define the work; key points define the actions.</p>
+</div>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('overview', this)">Overview <span class="tab-badge badge-t1-small">Strategic context</span></button>
+  <button class="tab-btn" onclick="switchTab('tier1', this)">Tier 1 — Active Now <span class="tab-badge badge-t1-small">Tracks 1 2 3 4 6</span></button>
+  <button class="tab-btn" onclick="switchTab('tier2', this)">Tier 2 — Existing Motions <span class="tab-badge badge-t2-small">Tracks 5 9</span></button>
+  <button class="tab-btn" onclick="switchTab('tier3', this)">Tier 3 — Seeded Q4+ <span class="tab-badge badge-t3-small">Tracks 7 8</span></button>
+</nav>
+
+<!-- OVERVIEW TAB -->
+<div id="tab-overview" class="tab-panel active">
+  <!-- PRIORITY MAPPING -->
+  <div style="margin-bottom:64px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.18);">
+      <div style="padding:28px 32px;border-bottom:1px solid var(--border);background:var(--surface2);">
+        <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:10px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Strategic context</div>
+        <div style="font-size:17px;font-weight:600;color:var(--text);letter-spacing:-0.02em;margin-bottom:10px;line-height:1.4;">This is everything marketing GTM can do to make Embedded Finance a success — but we cannot conquer the world from day one.</div>
+        <div style="font-size:13px;color:var(--subtle);max-width:760px;line-height:1.7;">Hard prioritisation is required. The tracks below are mapped against Reap's 10 company priorities from the June 2026 Leadership Offsite. Marketing GTM focuses on the tracks that directly serve the highest-priority company bets — everything else is seeded or deferred.</div>
+      </div>
+      <div style="padding:24px 32px 12px;">
+        <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:10px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:20px;">Company priorities → GTM track mapping</div>
+        <div style="display:grid;gap:14px;">
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(113,247,236,0.07);border:1px solid rgba(113,247,236,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t1);">07</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">Lead global FaaS — re-establish Reap as the largest stablecoin-linked card enabler globally</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Pablo (interim CRO)</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 1 — Foundation</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 2 — Content & SEO</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 3 — Demand Gen</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 4 — Website</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(113,247,236,0.07);border:1px solid rgba(113,247,236,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t1);">03</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">Bet big on agentic payments — first-mover advantage, entrench Reap as global subject-matter expert</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Anna C</div>
+              <div style="font-size:11px;color:var(--subtle);margin-top:5px;">Agentic is a horizontal module within Embedded Finance — sits on top of Cards and Payments, not beside them. Extends existing modules; cannot be purchased independently.</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 2 — Content & SEO (Agentic thought leadership)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 3 — Demand Gen (ICP 4)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 5 — Token2049 Agentic summit</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(113,247,236,0.12);color:#71F7EC;margin:2px 3px 2px 0;">Track 7 — Web3 Community</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(68,105,255,0.07);border:1px solid rgba(68,105,255,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t2);">02</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">Dual scheme & four BINs — live customer transactions on BINs for HK, MX, US, and one other market</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Harris</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 6 — Regional Launches (HK · MX · BR active · US + Africa gated)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 1 — Foundation (placement matrix per market)</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(68,105,255,0.07);border:1px solid rgba(68,105,255,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t2);">04</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">Accelerate Payward synergies — combined GTM, Payward funding for Visa collateral, HK Custody License</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Felipe</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 5 — Token2049 (Payward partnership anchor)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 7 — Web3 Community (Reap x Payward at Solana Breakpoint)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 2 — Content & SEO (partner story)</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(68,105,255,0.07);border:1px solid rgba(68,105,255,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t2);">01</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">Accelerate onboarding — two-week onboarding for FaaS, real-time for Direct</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Naledi</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 1 — Foundation (6-week public commitment mechanic)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 4 — Website (speed as proof point)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(68,105,255,0.12);color:#94A8FF;margin:2px 3px 2px 0;">Track 8 — Expansion (onboarding → cross-sell trigger)</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:28px 1fr 1fr;gap:16px;align-items:start;padding:18px 20px;background:rgba(168,85,247,0.07);border:1px solid rgba(168,85,247,0.18);border-radius:10px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--t3);">09</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px;">NPS of 40 or more — customer centricity as flywheel for product and geographic expansion</div>
+              <div style="font-size:11px;color:var(--muted);">DRI: Ivo</div>
+            </div>
+            <div style="font-size:12px;color:var(--subtle);">
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(168,85,247,0.12);color:#C084FC;margin:2px 3px 2px 0;">Track 8 — Expansion / Cross-sell (existing client health)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(168,85,247,0.12);color:#C084FC;margin:2px 3px 2px 0;">Track 2 — Human Brand Content (customer spotlights)</span>
+              <span style="display:inline-block;padding:2px 8px;border-radius:4px;background:rgba(168,85,247,0.12);color:#C084FC;margin:2px 3px 2px 0;">Track 9 — Measurement (NPS signals into feedback loop)</span>
+            </div>
+          </div>
+
+          <div style="padding:12px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;display:grid;grid-template-columns:28px 1fr;gap:12px;">
+            <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:12px;font-weight:600;color:var(--muted);">—</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6;">Priorities 05 (Unlock Direct), 06 ($0 incident losses), 08 (Internal agent platform), and 10 (Build the org) are out of FaaS marketing GTM scope. They are noted here for completeness — marketing supports where relevant but does not own these tracks.</div>
+          </div>
+
+        </div>
+      </div>
+      <div style="padding:18px 32px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);">
+          <div style="width:8px;height:8px;border-radius:2px;background:rgba(113,247,236,0.4);"></div>Must-do — directly serves top company bets
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);">
+          <div style="width:8px;height:8px;border-radius:2px;background:rgba(68,105,255,0.4);"></div>Important — serves company priorities, slightly downstream
+        </div>
+        <div style="display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted);">
+          <div style="width:8px;height:8px;border-radius:2px;background:rgba(168,85,247,0.4);"></div>Seeded — supports long-term flywheel
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- MARKETING TEAM R&R -->
+  <div style="margin-bottom:64px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.18);">
+      <div style="padding:28px 32px;border-bottom:1px solid var(--border);background:var(--surface2);">
+        <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Marketing Team</div>
+        <div style="font-size:17px;font-weight:600;color:var(--text);letter-spacing:-0.02em;margin-bottom:10px;line-height:1.4;">Roles &amp; Responsibilities — FaaS GTM</div>
+        <div style="font-size:13.5px;color:var(--subtle);max-width:760px;line-height:1.7;">The marketing team supporting Embedded Finance GTM across strategy, content, demand generation, website, and regional activation.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;">
+
+        <!-- Leadership -->
+        <div style="padding:24px 28px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);">
+          <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--t1);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(113,247,236,0.12);opacity:0.8;">Leadership</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Harris</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Head of Product — overall sign-off, licensing gate, regional approvals, product direction across all FaaS modules</div>
+            </div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Mindaugas</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Head of Marketing — overall GTM strategy of all product lines, team direction, executive alignment, and cross-functional stakeholder management</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy & Positioning -->
+        <div style="padding:24px 28px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);">
+          <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--t1);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(113,247,236,0.12);opacity:0.8;">Strategy &amp; Positioning</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Pearlyn</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">GTM marketing owner — owns GTM planning and execution across all tracks; campaign strategy, marketing assets, content strategy, event strategy, regional activation support, client marketing</div>
+            </div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Anushka</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Product marketing — ICP definition, positioning, placement framework, battlecards, messaging inputs per module, regional positioning adaptation, expansion messaging, and channel strategy inputs</div>
+            </div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Latam Marketing Manager</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Regional support — Latam GTM activation, localisation, and regional marketing support across all tracks</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content & Brand -->
+        <div style="padding:24px 28px;border-bottom:1px solid var(--border);">
+          <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--t1);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(113,247,236,0.12);opacity:0.8;">Content &amp; Brand</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Sue Ann</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">PR &amp; comms — media relations, thought leadership, speaking pitches, partner announcements</div>
+            </div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Alexa</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">SEO lead — keyword strategy, content ranking, AI citation engine, directory profiles, writing and article creation</div>
+            </div>
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">Jainil</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Overall content and asset development — socials and video content</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web & Design -->
+        <div style="padding:24px 28px;border-right:1px solid var(--border);">
+          <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--t1);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(113,247,236,0.12);opacity:0.8;">Web &amp; Design</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div>
+              <div style="font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:3px;">April</div>
+              <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;">Web build — Webflow, page development, GA + Webflow Insights setup, HubSpot form integration; design direction of sales enablement and AI workflows</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extended team note -->
+        <div style="padding:24px 28px;border-right:1px solid var(--border);grid-column:2 / 4;">
+          <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);">Extended Stakeholders</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+            <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;"><b style="color:var(--text);font-weight:500;">Caleb</b> — Revenue Ops, HubSpot, lead scoring, attribution</div>
+            <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;"><b style="color:var(--text);font-weight:500;">Anna</b> — Agentic module, developer community, Agentic thought leadership voice</div>
+            <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;"><b style="color:var(--text);font-weight:500;">Boris / TC</b> — technical accuracy across all content</div>
+            <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;"><b style="color:var(--text);font-weight:500;">Rachel / Nur / Vitor</b> — Sales GTM leads (APAC, MX/BR)</div>
+            <div style="font-size:12.5px;color:var(--subtle);line-height:1.6;"><b style="color:var(--text);font-weight:500;">Joris / CG</b> — Customer Growth, client approvals, expansion</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIER 1 TAB -->
+<div id="tab-tier1" class="tab-panel">
+  <div class="tier">
+    <div class="tier-label">
+      <span class="tier-badge b1">Tier 1</span>
+      <span class="tier-title">Active now — Q3 core, must be staffed · Tracks 1, 2, 3, 4, 6</span>
+      <div class="tier-rule"></div>
+    </div>
+    <!-- ═══════════════════════════════════════════
+     TIER 1 — ACTIVE NOW
+════════════════════════════════════════════ -->
+</div>
+
+  <div style="background:var(--surface);border:1px solid rgba(113,247,236,0.25);border-radius:14px;padding:32px 36px;margin-bottom:32px;">
+      <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:10px;color:var(--t1);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Tier 1 — Why this is critical for FaaS success</div>
+      <div style="font-size:15px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:12px;">Tier 1 is the GTM engine. Without it, Embedded Finance has no market presence, no pipeline, and no conversion path.</div>
+      <div style="font-size:13.5px;color:var(--subtle);line-height:1.75;max-width:900px;">FaaS is being relaunched as a unified platform — but the market doesn't know that yet. Reap has the product, the proof points, and live clients, but none of that translates into revenue without a coordinated external motion. Tier 1 builds the four pillars that every deal depends on: the narrative that makes FaaS legible to buyers (Foundation), the content engine that creates organic demand at scale (Content & SEO), the outbound and inbound motion that turns interest into pipeline (Demand Gen), and the website that converts that pipeline into qualified conversations (Website). Regional Launches sits here too because HK, MX, and BR are already live — this isn't future planning, it's active execution in markets where Reap has real proof and real clients today. These five tracks run in parallel and are mutually dependent — a great website with no demand gen is invisible; demand gen without a website has nowhere to point. Getting Tier 1 right in Q3 is the difference between FaaS becoming the category leader in embedded finance or remaining an internal restructure that the market never notices.</div>
+    </div>
+  <!-- TRACK 1: FOUNDATION -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c1)"></div>
+      <div class="track-title">Track 1 — Foundation</div>
+      <div class="track-meta">One-time push · then quarterly maintenance · prerequisite for all other tracks</div>
+    </div>
+    <div class="track-body cols-4">
+      <div class="sub">
+        <div class="sub-title">Naming & Positioning</div>
+        <div class="items">
+          <div class="item">External name locked: <b>Embedded Finance</b></div>
+          <div class="item">Internal name: <b>FaaS</b></div>
+          <div class="item">Positioning doc finalized and signed off</div>
+          <div class="item">Tagline direction confirmed (A/B/C spectrum — safe to risky)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Placement Framework</div>
+        <div class="items">
+          <div class="item">3 ICPs: Web3 Platforms & Wallets · Financial Adjacent / Asset Managers · Corporate / B2B — plus Agentic as a horizontal layer available across all ICPs</div>
+          <div class="item">Discovery question set per ICP → placement output</div>
+          <div class="item">Operating model matrix (Cards, Program managed and BIN)</div>
+          <div class="item">Fit signals codified for sales conversations</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Sales Assets</div>
+        <div class="items">
+          <div class="item"><b>Pitch decks — Embedded Finance overview, with 2 key modules</b></div>
+          <div class="item">Cards (primary)</div>
+          <div class="item">BIN Sponsorship (subsegment of Cards)</div>
+          <div class="item">Payments (coming)</div>
+          <div class="item">1-pager per ICP (4 versions)</div>
+          <div class="item">Comparison sheet vs. Marqeta / Bridge / BVNK / Stripe Issuing</div>
+          <div class="item">Placement framework one-pager (leave-behind)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Internal Alignment</div>
+        <div class="items">
+          <div class="item flag">Harris sign-off needed for external name "Embedded Finance" across all 🔴</div>
+          <div class="item">Unified clear Q3–Q4 roadmap across former CaaS + FaaS teams + Payments for GTM planning purposes</div>
+          <div class="item flag">MSA finalized to cover cross-sell across all modules 🟡</div>
+          <div class="item">Universal pricing and packaging defined</div>
+          <div class="item">HubSpot: CaaS pipeline reconciled + migrated under FaaS (to check with Caleb on current state + any changes needed)</div>
+        </div>
+      </div>
+      <div class="sub" style="grid-column: 1 / -1; border-right: none;">
+        <div class="sub-title">🚀 Product-Led Launch Campaign — FaaS as the upgraded CaaS</div>
+        <div class="items">
+          <div class="item">Once all foundations are in place, relaunch FaaS externally as the natural evolution of CaaS — not a rebrand, but a meaningful upgrade with more modules, more markets, and more infrastructure</div>
+          <div class="item"><b>Internal comms first:</b> all existing CaaS clients notified of the upgrade before any public announcement — they should never find out via a press release</div>
+          <div class="item"><b>External launch moment:</b> coordinated across website, PR, LinkedIn, X/Twitter, and partner channels simultaneously — one clean signal to market</div>
+          <div class="item"><b>Anchor to a milestone:</b> tie launch timing to a tangible proof point — first client live on multi-module, dual-scheme live in a new market, or Payward partnership announcement</div>
+          <div class="item"><b>Campaign assets:</b> launch video, press release, updated product page, client announcement posts, founder post from Daren / Kevin, partner co-announcements</div>
+          <div class="item"><b>Gate:</b> naming sign-off (Harris), MSA finalized, HubSpot migrated, website live, at least one customer story approved — all Track 1 foundations must be complete before launch</div>
+          <div class="item" style="color:#FFC680;">⚠️ Timing TBD — dependent on Track 1 completion and Harris overall sign-off. Target window: Q3 end or early Q4.</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Time-to-first-qualified-demo from go-live</span><span class="metric-target ">≤ 2 weeks</span></div><div class="metric-item"><span class="metric-name">Pipeline unlocked by sales assets</span><span class="metric-target ">TBD</span></div><div class="metric-item"><span class="metric-name">GTM assets signed off and live by target date</span><span class="metric-target ">100% by end Jul</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Sales team asset adoption rate</span><span class="metric-target ">≥ 80%</span></div><div class="metric-item"><span class="metric-name">Placement framework used in discovery calls</span><span class="metric-target ">100% of calls</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Pearlyn — marketing assets</span>
+      <span class="owner-tag primary">Anushka — ICP definition, positioning, placement</span>
+      <span class="owner-tag">Rachel / Nur — commercial, MSA</span>
+      <span class="owner-tag">Caleb — Revenue Ops, HubSpot</span>
+      <span class="owner-tag primary">Harris — overall sign-off</span>
+      <span class="owner-tag">Amelia — Cards/CPMaaS inputs</span>
+      <span class="owner-tag">Zi Xuan — Payments inputs</span>
+      <span class="owner-tag">Anna — Agentic inputs</span>
+    </div>
+  </div>
+
+  <!-- TRACK 2: CONTENT & SEO -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c2)"></div>
+      <div class="track-title">Track 2 — Content & SEO</div>
+      <div class="track-meta">Weekly cadence · always-on · two distinct motions in parallel</div>
+    </div>
+    <div class="track-body cols-3">
+      <div class="sub">
+        <div class="sub-title">PR & Thought Leadership — credibility-shaped</div>
+        <div class="items">
+          <div class="item"><b>Media & press</b></div>
+          <div class="item">Target publications: The Block · CoinDesk · PYMNTS · Fintech Nexus · Tech in Asia</div>
+          <div class="item">Story angles: Embedded Finance launch · Agentic as category leadership · dual-scheme milestone · regional expansion moments</div>
+          <div class="item">Reactive PR: regulatory wins, partnership announcements, client go-lives</div>
+          <div class="item"><b>Thought leadership</b></div>
+          <div class="item">Daren / Kevin / Harris / Anna as named voices — not just Reap as a brand (Anna leads Agentic)</div>
+          <div class="item">Op-eds and bylines: stablecoin infrastructure, embedded finance for Web3, agentic payments</div>
+          <div class="item">Speaking pitches: Token2049 panels · SFF · Blockchain Rio · Solana Breakpoint</div>
+          <div class="item"><b>Awards & recognition</b></div>
+          <div class="item">Fintech industry awards as credibility signals — especially for new markets</div>
+          <div class="item">Analyst and research house briefings (Gartner, Forrester, CB Insights) where relevant</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">SEO Content — discoverability-shaped</div>
+        <div class="items">
+          <div class="item"><b>P1 content wave (Q3 publish, Q4+ rank)</b></div>
+          <div class="item">"What is Embedded Finance?" — category hub, 12K monthly searches</div>
+          <div class="item">Card program sub content pages and use cases</div>
+          <div class="item">Embedded payments explainer</div>
+          <div class="item">White-label card guide</div>
+          <div class="item">Stablecoin card launch guide</div>
+          <div class="item">State of Embedded Finance 2026 — flagship report (Q4)</div>
+          <div class="item"><b>Use case content pages — by vertical</b></div>
+          <div class="item">Web3 platforms & exchanges</div>
+          <div class="item">Neobanks & digital wallets</div>
+          <div class="item">Asset managers & custody platforms</div>
+          <div class="item">Corporate & B2B spend programs</div>
+          <div class="item"><b>Comparison & alternative pages</b></div>
+          <div class="item">Reap vs Marqeta · vs Rain · vs BVNK · vs Bridge</div>
+          <div class="item">Stripe Issuing alternatives</div>
+          <div class="item"><b>AI citation engine</b></div>
+          <div class="item">Directory profiles (G2, Capterra, Crunchbase) claimed + updated</div>
+          <div class="item">Partner backlinks: Bitget, HexTrust, MetaMask, Bitcoin.com</div>
+          <div class="item">"Reap Review 2026" via CoinCodeCap — Q4</div>
+          <div class="item">Docs crawlable and indexed</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Human Brand Content — trust-shaped</div>
+        <div class="items">
+          <div class="item"><b>Customer spotlights</b></div>
+          <div class="item">Video-first (LinkedIn-native, Reels-length) · long-form as secondary cut</div>
+          <div class="item">Priority: RedotPay · Bitget Wallet · KAST · Travala</div>
+          <div class="item">Approval path via Joris / CG — unlock now, not at launch</div>
+          <div class="item"><b>Partner stories</b></div>
+          <div class="item">Reap brings the brief — proactive, not reactive</div>
+          <div class="item">Priority: Circle · Thredd · Solana · Tron · Base · Flagright + other key partners in FaaS workflows</div>
+          <div class="item">Seeded back to partner channels for reach multiplier</div>
+          <div class="item"><b>Founder / operator voice</b></div>
+          <div class="item">Daren / Kevin byline series — Magent teardown posts, honest tone</div>
+          <div class="item">LinkedIn cadence anchored to ecosystem moments</div>
+          <div class="item">X threads for Web3 builder audience</div>
+          <div class="item"><b>Event content</b></div>
+          <div class="item">Recaps: Token2049 · SFF · Reap x Payward at Solana Breakpoint</div>
+          <div class="item">One video format tested and shipped before end of Q3</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">MQLs attributed to content</span><span class="metric-target t2">≥ 10/month by Q4</span></div><div class="metric-item"><span class="metric-name">Pipeline value from content-sourced leads</span><span class="metric-target t2">TBD</span></div><div class="metric-item"><span class="metric-name">GP contribution from content-converted clients</span><span class="metric-target t2">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Organic sessions to FaaS pages</span><span class="metric-target t2">≥ 2,000/month by Q4</span></div><div class="metric-item"><span class="metric-name">P1 keyword rankings (top 10)</span><span class="metric-target t2">≥ 3 keywords by Q4</span></div><div class="metric-item"><span class="metric-name">AI citation appearances (ChatGPT/Perplexity/Gemini)</span><span class="metric-target t2">≥ 5 by Q4</span></div><div class="metric-item"><span class="metric-name">PR placements secured</span><span class="metric-target t2">≥ 2/month</span></div><div class="metric-item"><span class="metric-name">Cost per MQL (content channel)</span><span class="metric-target t2">≤ $200</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Pearlyn — strategy + execution</span>
+      <span class="owner-tag primary">Sue Ann — PR, comms + thought leadership</span>
+      <span class="owner-tag primary">Alexa — SEO lead</span>
+      <span class="owner-tag">Jainil — content production</span>
+      <span class="owner-tag">Boris / TC — technical accuracy</span>
+      <span class="owner-tag">Joris / CG — customer story approvals</span>
+    </div>
+  </div>
+
+  <!-- TRACK 3: DEMAND GEN -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c3)"></div>
+      <div class="track-title">Track 3 — Demand Gen</div>
+      <div class="track-meta">Both inbound + outbound · HubSpot sequences to be built from scratch · where OKR numbers get hit</div>
+    </div>
+    <div class="track-body cols-2">
+      <div class="sub">
+        <div class="sub-title">ICP 1 — Web3 Platforms & Wallets</div>
+        <div class="items">
+          <div class="item"><b>Hook:</b> launch in 6–8 weeks, no pre-funding, stablecoin-native</div>
+          <div class="item"><b>Decision makers:</b> Head of Product, CTO, VP Engineering</div>
+          <div class="item"><b>Outbound:</b> LinkedIn · X/Twitter · Discord/Telegram builder spaces</div>
+          <div class="item"><b>Inbound:</b> content → website form → lead scoring → sales handoff</div>
+          <div class="item"><b>Proof:</b> Bitget Wallet (CPMaaS, User-Funded) · RedotPay</div>
+          <div class="item"><b>Intent signals:</b> compliance/payments job postings · fundraising announcements</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">ICP 2 — Financial Adjacent / Asset Managers</div>
+        <div class="items">
+          <div class="item"><b>Hook:</b> bridge crypto and fiat, one partner replacing six vendors</div>
+          <div class="item"><b>Decision makers:</b> COO, Head of Digital Assets, Head of Operations</div>
+          <div class="item"><b>Outbound:</b> LinkedIn · custody partner referrals (Fireblocks, BitGo) · PR (The Block, CoinDesk)</div>
+          <div class="item"><b>Inbound:</b> content → website form → lead scoring → sales handoff</div>
+          <div class="item"><b>Proof:</b> Moomoo archetype · HexTrust</div>
+          <div class="item"><b>Intent signals:</b> hiring for digital asset ops · announcing tokenized fund products</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">ICP 3 — Corporate / B2B</div>
+        <div class="items">
+          <div class="item"><b>Hook:</b> branded spend cards + cross-border rails, no license required</div>
+          <div class="item"><b>Decision makers:</b> CFO, Head of Finance, COO</div>
+          <div class="item"><b>Outbound:</b> LinkedIn · APAC/LATAM Chamber of Commerce · accounting firm referrals</div>
+          <div class="item"><b>Inbound:</b> content → website form → lead scoring → sales handoff</div>
+          <div class="item"><b>Entry point:</b> BIN Sponsorship → upsell to Payments</div>
+          <div class="item"><b>Proof:</b> HEVN (corporate program issuer)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Agentic Layer — horizontal extension across all ICPs</div>
+        <div class="items">
+          <div class="item"><b>Positioning:</b> not a standalone ICP — extends Cards and Payments for AI-native workflows; activated on top of an existing module</div>
+          <div class="item"><b>Hook:</b> scoped agent credentials and programmable spend built natively into the platform — no bolt-on required</div>
+          <div class="item"><b>Who activates it:</b> any ICP buyer already using Cards or Payments who is building AI agent workflows — or AI-first native agent card companies (e.g. agentcard.sh) or Web3 projects moving into AI (e.g. NEAR) — CTO, Head of AI/Automation, VP Engineering</div>
+          <div class="item"><b>Outbound:</b> layered onto ICP 1–3 sequences — introduced as a capability available to existing clients, not a separate pitch</div>
+          <div class="item"><b>Inbound:</b> Agentic content → surfaces within platform pages, not a standalone product page</div>
+          <div class="item"><b>Proof:</b> Reap-native capability, no competitor equivalent — position Reap as building ahead of the curve</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Outbound Sequences — build from scratch</div>
+        <div class="items">
+          <div class="item">3 HubSpot sequences — one per ICP segment · Agentic layer introduced within sequences, not as a standalone track</div>
+          <div class="item">Each: ICP hook · 5–7 touch cadence · personalization variables (company type, module fit, region)</div>
+          <div class="item">Messaging inputs: Anushka (battlecards) · Pearlyn (campaign strategy)</div>
+          <div class="item">Module inputs: Amelia (Cards) · Zi Xuan (Payments) · Anna (Agentic)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Inbound, Lead Scoring & ABM</div>
+        <div class="items">
+          <div class="item">Website form questions designed to qualify and route by ICP on submission</div>
+          <div class="item">Lead scoring model in HubSpot — Caleb (Revenue Ops)</div>
+          <div class="item">Scoring criteria: company type · module interest · geography · urgency signals</div>
+          <div class="item">Handoff: Rachel (APAC) · Vitor (MX/BR) · Nur (others)</div>
+          <div class="item"><b>ABM named accounts:</b> TBD — Caleb to pull from existing hunting list and filter for FaaS-fit</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">MQLs generated per ICP per month</span><span class="metric-target ">≥ 5 per ICP</span></div><div class="metric-item"><span class="metric-name">SQL conversion rate</span><span class="metric-target ">≥ 20%</span></div><div class="metric-item"><span class="metric-name">Pipeline value created (inbound + outbound)</span><span class="metric-target ">TBD</span></div><div class="metric-item"><span class="metric-name">Contract value from demand gen-sourced deals</span><span class="metric-target ">TBD</span></div><div class="metric-item"><span class="metric-name">GP contribution from demand gen</span><span class="metric-target ">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Cost per MQL</span><span class="metric-target ">≤ $150</span></div><div class="metric-item"><span class="metric-name">Outbound sequence reply rate</span><span class="metric-target ">≥ 8%</span></div><div class="metric-item"><span class="metric-name">MQL → SQL conversion rate</span><span class="metric-target ">≥ 20%</span></div><div class="metric-item"><span class="metric-name">ABM account engagement rate</span><span class="metric-target ">≥ 30%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Rachel / Nur — outbound, pipeline, inbound qualification</span>
+      <span class="owner-tag primary">Caleb — Revenue Ops, HubSpot sequences, lead scoring</span>
+      <span class="owner-tag primary">Anushka — ICP battlecards, messaging inputs</span>
+      <span class="owner-tag">Vitor — MX/BR</span>
+      <span class="owner-tag">Pearlyn — campaign strategy</span>
+      <span class="owner-tag">Amelia — Cards inputs</span>
+      <span class="owner-tag">Zi Xuan — Payments inputs</span>
+      <span class="owner-tag">Anna — Agentic inputs</span>
+    </div>
+  </div>
+
+  <!-- TRACK 4: WEBSITE -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c4)"></div>
+      <div class="track-title">Track 4 — Website</div>
+      <div class="track-meta">Sprint cadence through Q3 · then iteration · conversion layer everything else points at</div>
+    </div>
+    <div class="track-body cols-4">
+      <div class="sub">
+        <div class="sub-title">Core Product Pages</div>
+        <div class="items">
+          <div class="item"><b>FaaS / Embedded Finance master product page</b></div>
+          <div class="item">Problem / solution / proof structure</div>
+          <div class="item">Inbound form live + connected to HubSpot</div>
+          <div class="item">Demo CTA working</div>
+          <div class="item"><b>Cards page</b> — overarching card issuance concept · high-level, no module depth (CPMaaS / CaaS / BIN detail handled at sales level)</div>
+          <div class="item"><b>Payments page</b> — cross-border rails · stablecoin-native · multi-currency</div>
+          <div class="item"><b>Agentic page</b> — horizontal capability layer · sits on top of Cards and Payments · scoped agent credentials · not a standalone product purchase</div>
+          <div class="item" style="color:var(--subtle);font-style:italic;">Agentic capabilities surfaced within each product page as a platform layer — not a standalone page</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Proof Layer</div>
+        <div class="items">
+          <div class="item">3–5 customer stories with named stats + attributed quotes</div>
+          <div class="item">Priority: RedotPay · Bitget Wallet · KAST</div>
+          <div class="item">Each story: client name · use case · operating model · key metric</div>
+          <div class="item">Logo wall — live clients only, no aspirational logos</div>
+          <div class="item"><b>Use case pages — by vertical</b></div>
+          <div class="item">Web3 platforms & exchanges</div>
+          <div class="item">Neobanks & digital wallets</div>
+          <div class="item">Asset managers & custody platforms</div>
+          <div class="item">Corporate & B2B spend programs</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Comparison & Discovery</div>
+        <div class="items">
+          <div class="item">Reap vs Marqeta · vs Rain · vs BVNK · vs Bridge</div>
+          <div class="item">Stripe Issuing alternatives</div>
+          <div class="item">Embedded Finance cost calculator (self-serve audit tool — supports reverse demo)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Technical Setup</div>
+        <div class="items">
+          <div class="item">AEO/SEO tagging across all pages</div>
+          <div class="item">GA + Webflow Insights reconciled</div>
+          <div class="item">HubSpot form integration confirmed</div>
+          <div class="item">Docs linked and crawlable</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Demo requests submitted per month *</span><span class="metric-target t2">≥ 15/month by Q4</span></div><div class="metric-item"><span class="metric-name">Form-to-MQL conversion rate</span><span class="metric-target t2">≥ 25%</span></div><div class="metric-item"><span class="metric-name">Pipeline value attributed to website</span><span class="metric-target t2">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Sessions to FaaS product + use-case pages</span><span class="metric-target t2">≥ 1,500/month by Q4</span></div><div class="metric-item"><span class="metric-name">Average time on page (use-case pages)</span><span class="metric-target t2">≥ 2 min</span></div><div class="metric-item"><span class="metric-name">Bounce rate (product page)</span><span class="metric-target t2">≤ 50%</span></div><div class="metric-item"><span class="metric-name">Page-to-MQL attribution rate</span><span class="metric-target t2">≥ 15%</span></div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--muted);font-style:italic;">* FaaS demo capability to be confirmed — metric is a placeholder pending clarification on whether a demo environment exists or is planned.</div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Pearlyn — strategy, copy direction</span>
+      <span class="owner-tag primary">April / Alexa — build, Webflow</span>
+      <span class="owner-tag">Rachel / Nur — proof point approvals</span>
+      <span class="owner-tag">Boris — technical accuracy</span>
+      <span class="owner-tag">Joris / CG — customer story sign-off</span>
+    </div>
+  </div>
+  <!-- TRACK 6: REGIONAL LAUNCHES -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c6)"></div>
+      <div class="track-title">Track 6 — Regional Launches</div>
+      <div class="track-meta">Active now · HK · MX · BR in full swing · US and Africa gated pending licensing</div>
+    </div>
+    <div class="track-body cols-3">
+      <div class="sub">
+        <div class="sub-title">Global → Regional → Localization Framework</div>
+        <div class="items">
+          <div class="item"><b>Global:</b> master positioning, proof points, module availability matrix</div>
+          <div class="item"><b>Regional:</b> market-specific hooks · compliance claims (LRC cleared) · local event calendar · regional partner shortlist</div>
+          <div class="item"><b>Localization:</b> language · local regulatory references · regional customer stories · local BD contacts</div>
+          <div class="item">Marketing supports respective regional GTM leads on activation — not running regional GTM independently</div>
+          <div class="item">Harris as overall approver across all regional launches</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Live & Active Markets</div>
+        <div class="items">
+          <div class="item"><b>HK:</b> Visa principal issuer · first dual-scheme · compliance depth</div>
+          <div class="item">Proof: Bitget Wallet · RedotPay · HexTrust</div>
+          <div class="item">Owner: Amelia · Rachel (APAC Sales)</div>
+          <div class="item"><b>MX:</b> first dual-scheme issuer · LATAM corridor entry</div>
+          <div class="item">Owner: Amelia · Vitor (Sales)</div>
+          <div class="item"><b>BR:</b> LATAM expansion proof · stablecoin-native rails</div>
+          <div class="item">Owner: Zi Xuan · Vitor (Sales)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Gated Markets — awaiting licensing</div>
+        <div class="items">
+          <div class="item"><b>US</b> — CRB × Thredd × Visa track · waiting on licensing · GTM lead: Jun</div>
+          <div class="item"><b>Africa</b> — via Mauritius · waiting on licensing · GTM lead: Chaerim</div>
+          <div class="item">Both markets ready to activate GTM immediately once licensing unlocks</div>
+          <div class="item">Framework and localization brief to be prepared in advance so there is no delay at go-live</div>
+          <div class="item">Harris holds licensing gate sign-off for both</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Pipeline value per region</span><span class="metric-target t3">TBD per market</span></div><div class="metric-item"><span class="metric-name">Contract value from regional GTM</span><span class="metric-target t3">TBD</span></div><div class="metric-item"><span class="metric-name">GP contribution per live market</span><span class="metric-target t3">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Inbound leads per region per month</span><span class="metric-target t3">≥ 5 per market</span></div><div class="metric-item"><span class="metric-name">Time-to-market for new region activation</span><span class="metric-target t3">≤ 6 weeks</span></div><div class="metric-item"><span class="metric-name">Regional page sessions and conversion rate</span><span class="metric-target t3">TBD</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Pearlyn — framework, localization brief, marketing activation support</span>
+      <span class="owner-tag primary">Anushka — regional positioning adaptation</span>
+      <span class="owner-tag">Rachel — APAC Sales GTM lead</span>
+      <span class="owner-tag">Vitor — MX/BR Sales GTM lead</span>
+      <span class="owner-tag">Amelia — Cards per market</span>
+      <span class="owner-tag">Zi Xuan — Payments per market</span>
+      <span class="owner-tag primary">Harris — licensing gate sign-off + overall approver</span>
+    </div>
+  </div>
+
+</div>
+  </div>
+  
+</div>
+</div>
+
+<!-- TIER 2 TAB -->
+<div id="tab-tier2" class="tab-panel">
+  <div class="tier">
+    <div class="tier-label">
+      <span class="tier-badge b2">Tier 2</span>
+      <span class="tier-title">Existing motions — running in parallel · Tracks 5, 9</span>
+      <div class="tier-rule"></div>
+    </div>
+    <!-- ═══════════════════════════════════════════
+     TIER 2 — LIGHTER TOUCH
+════════════════════════════════════════════ -->
+</div>
+
+  <div style="background:var(--surface);border:1px solid rgba(68,105,255,0.25);border-radius:14px;padding:32px 36px;margin-bottom:32px;">
+      <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:10px;color:var(--t2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Tier 2 — Why this is critical for FaaS success</div>
+      <div style="font-size:15px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:12px;">Tier 2 is what keeps the GTM engine honest — converting in-person relationships into pipeline and ensuring every dollar and every effort is traceable back to outcomes.</div>
+      <div style="font-size:13.5px;color:var(--subtle);line-height:1.75;max-width:900px;">In embedded finance, trust is built in rooms — not just on websites. Offline activations give FaaS the moments where proof points land in person, where a named client in the room does more than ten case studies online, and where the Payward partnership and Agentic narrative get their first public stage. Token2049 in particular is the single highest-leverage moment in H2 — it is Reap's first coordinated public signal that FaaS is real, live, and winning. Without measurement running in parallel, none of the Tier 1 investment can be optimised — Reap would be running six workstreams blind to each other, unable to tell which ICP converts best, which channel is generating real pipeline, or where deals are stalling in the sales cycle. Tier 2 is lighter touch on headcount but absolutely non-negotiable on outcomes.</div>
+    </div>
+  <!-- TRACK 5: OFFLINE ACTIVATIONS -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c5)"></div>
+      <div class="track-title">Track 5 — Offline Activations</div>
+      <div class="track-meta">Event-calendar driven · FaaS proof points showing up at every event</div>
+    </div>
+    <div class="track-body cols-4">
+      <div class="sub">
+        <div class="sub-title">Reap x Payward @ Solana Breakpoint</div>
+        <div class="items">
+          <div class="item" style="color:#FFC680">Tentative — still being crafted</div>
+          <div class="item">Activation: Agentic module + developer community + design partner seeding</div>
+          <div class="item">Format: Reap x Payward co-hosted event</div>
+          <div class="item"><b>Who:</b> Anna · Boris · Pearlyn · Rachel · Harris</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Token2049 Singapore — Sep</div>
+        <div class="items">
+          <div class="item">Activation: first Asia public moment — FaaS platform + Agentic module launch</div>
+          <div class="item">Anchored by Payward partnership</div>
+          <div class="item">Potential Agentic summit + FaaS product launch side events</div>
+          <div class="item">Live client proof points + named logos present</div>
+          <div class="item"><b>Who:</b> Daren / Kevin · Harris · Anna · Amelia · Pearlyn</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">HKFTW — Oct</div>
+        <div class="items">
+          <div class="item">Activation: HK corridor story</div>
+          <div class="item">Cards + Payments cross-sell narrative</div>
+          <div class="item"><b>Who:</b> Amelia · Zi Xuan · Rachel</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Singapore Fintech Festival — Nov</div>
+        <div class="items">
+          <div class="item">Activation: Payments module under FaaS</div>
+          <div class="item">Cross-sell proof points</div>
+          <div class="item"><b>Who:</b> Zi Xuan · Pearlyn · Rachel</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Blockchain Rio — Q4</div>
+        <div class="items">
+          <div class="item">Activation: LATAM corridor story · BR market presence</div>
+          <div class="item">Stablecoin-native rails + Payments narrative</div>
+          <div class="item"><b>Who:</b> Zi Xuan · Vitor · Pearlyn</div>
+        </div>
+      </div>
+      <div class="sub" style="grid-column: 1 / -1; border-right: none;">
+        <div class="sub-title">At Every Event + Future State</div>
+        <div class="items" style="flex-direction: row; flex-wrap: wrap; gap: 8px 24px;">
+          <div class="item">FaaS sales assets present and updated</div>
+          <div class="item">VIP side event or hosted dinner where pipeline allows</div>
+          <div class="item">Live client attendance — Joris to facilitate</div>
+          <div class="item">Event recap content fed back into Track 2</div>
+          <div class="item" style="color:#A855F7">&#x1F52E; Future state: bespoke client-specific offline activations — co-hosted launches, client appreciation events, closed-door roundtables as installed base grows</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Pipeline sourced per event</span><span class="metric-target t2">≥ 3 qualified opps</span></div><div class="metric-item"><span class="metric-name">Contract value from event-sourced conversations</span><span class="metric-target t2">TBD</span></div><div class="metric-item"><span class="metric-name">GP contribution from event-closed deals</span><span class="metric-target t2">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Qualified conversations logged per event</span><span class="metric-target t2">≥ 20</span></div><div class="metric-item"><span class="metric-name">Existing clients brought to events</span><span class="metric-target t2">≥ 2 per event</span></div><div class="metric-item"><span class="metric-name">Cost per event-sourced MQL</span><span class="metric-target t2">≤ $300</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Pearlyn — event strategy, assets</span>
+      <span class="owner-tag">Rachel / Nur — pipeline activation</span>
+      <span class="owner-tag">Vitor — LATAM events</span>
+      <span class="owner-tag">Amelia — Cards representation</span>
+      <span class="owner-tag">Zi Xuan — Payments representation</span>
+      <span class="owner-tag">Anna — Agentic representation</span>
+      <span class="owner-tag primary">Harris — Business Sponsor, Token2049</span>
+      <span class="owner-tag">Joris / CG — live client facilitation</span>
+    </div>
+  </div>
+
+  <!-- TRACK 9: MEASUREMENT -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c9)"></div>
+      <div class="track-title">Track 9 — Measurement & Feedback Loop</div>
+      <div class="track-meta">Continuous once set up · end-to-end source + attribution tracking across all 8 sales cycle stages · ties all tracks together</div>
+    </div>
+    <div class="track-body cols-3">
+      <div class="sub">
+        <div class="sub-title">Attribution Setup — end-to-end source tracking</div>
+        <div class="items">
+          <div class="item"><b>Goal:</b> track every deal from first touch (source) through all 8 sales cycle stages to Activation and beyond into CG — no attribution gaps</div>
+          <div class="item">GA + Webflow Insights reconciled — first-touch source captured at form submission</div>
+          <div class="item">HubSpot source attribution mapped to all 8 sales cycle stages: Prospect → Qualification → Proposal → Negotiation → Onboarding → Closed Won → Implementation → Activation</div>
+          <div class="item">CaaS pipeline reconciled + migrated under FaaS in HubSpot (Caleb)</div>
+          <div class="item">UTM discipline across all outbound, content, event, and paid links</div>
+          <div class="item">Source field mandatory on every HubSpot deal — inbound / outbound / event / referral / partner / community</div>
+          <div class="item">Attribution carried through to CG handover at Stage 8 (Activation) so expansion revenue traces back to original source</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Performance Dashboard — by stage + by source</div>
+        <div class="items">
+          <div class="item"><b>Pipeline view:</b> deals by stage (1–8) broken down by source — see exactly where each channel's deals are sitting at any point</div>
+          <div class="item">Stage conversion rates: Stage 1→2 (Prospect→Qualification) · Stage 2→3 · Stage 5→6 (Onboarding→Closed Won) · Stage 7→8 (Implementation→Activation)</div>
+          <div class="item">Source breakdown per stage: inbound content · outbound sequences · events · referrals · community · partner</div>
+          <div class="item">ICP conversion rate by channel and by stage</div>
+          <div class="item">Content → MQL lag tracking (SEO: 8–12 week lag — account for it in reporting)</div>
+          <div class="item">Event-sourced pipeline: Token2049 · SFF · Blockchain Rio · Solana Breakpoint</div>
+          <div class="item">Cross-sell conversion rate per module pair (Cards → Payments · Cards → Crypto) — tracked from Stage 8 handover</div>
+          <div class="item">Cost per MQL and cost per Closed Won by source</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Feedback Into System</div>
+        <div class="items">
+          <div class="item">Monthly reallocation signal into Tracks 2 and 3 — driven by cost per MQL and stage conversion data</div>
+          <div class="item">Stage drop-off analysis: where are deals stalling? (e.g. high Prospect→Qual drop = messaging problem · high Onboarding→Closed Won drop = compliance friction)</div>
+          <div class="item">Quarterly tier review: which Tier 3 tracks are ready to move up based on pipeline contribution</div>
+          <div class="item">ICP signal review: are 4 segments holding or is a 5th emerging from the data</div>
+          <div class="item">Sales feedback loop: objections Rachel / Nur / Vitor hear at each stage that content and assets aren't answering</div>
+          <div class="item">Attribution accuracy review: % of deals with full source-to-activation tracking — target 100%</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Pipeline with known source attribution</span><span class="metric-target t2">≥ 80%</span></div><div class="metric-item"><span class="metric-name">Reallocation decisions made from data per quarter</span><span class="metric-target t2">≥ 2</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">UTM coverage rate across all tracks</span><span class="metric-target t2">100%</span></div><div class="metric-item"><span class="metric-name">Reporting turnaround time</span><span class="metric-target t2">≤ 3 days post-month-end</span></div><div class="metric-item"><span class="metric-name">Dashboard adoption by track owners</span><span class="metric-target t2">100%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Caleb — Revenue Ops, HubSpot attribution, pipeline tagging, lead scoring</span>
+      <span class="owner-tag">Pearlyn — dashboard requirements</span>
+      <span class="owner-tag">April / Alexa — GA/Webflow setup</span>
+      <span class="owner-tag">Joris / CG — expansion conversion tracking</span>
+    </div>
+  </div>
+</div>
+  </div>
+  
+</div>
+</div>
+
+<!-- TIER 3 TAB -->
+<div id="tab-tier3" class="tab-panel">
+  <div class="tier">
+    <div class="tier-label">
+      <span class="tier-badge b3">Tier 3</span>
+      <span class="tier-title">Seeded now, deliberately slower-build — Q4 and beyond · Tracks 7, 8</span>
+      <div class="tier-rule"></div>
+    </div>
+    <!-- ═══════════════════════════════════════════
+     TIER 3 — SEEDED
+════════════════════════════════════════════ -->
+</div>
+
+  <div style="background:var(--surface);border:1px solid rgba(168,85,247,0.25);border-radius:14px;padding:32px 36px;margin-bottom:32px;">
+      <div style="font-family:'PolySansMono',ui-monospace,monospace;font-size:10px;color:var(--t3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;">Tier 3 — Why this is critical for FaaS success</div>
+      <div style="font-size:15px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:12px;">Tier 3 is where Reap builds the moats that competitors cannot copy quickly — community trust among builders and the revenue flywheel inside the existing client base.</div>
+      <div style="font-size:13.5px;color:var(--subtle);line-height:1.75;max-width:900px;">The fastest and cheapest revenue available to FaaS right now is not net-new acquisition — it is the existing CaaS client base that is already on the platform and doesn't know what else they can access. Track 8 is an extension of Customer Growth and should be treated with the same urgency as any net-new sales motion. Every client that expands to a second module is proof of platform stickiness, a better unit economics story, and a living case study. Track 7 is a longer play but a strategically important one — the embedded finance buyers of tomorrow are the Web3 developers and protocol builders active in communities today. Reap has no presence there yet. Building it now, even lightly, is the difference between being discovered organically in those spaces versus always having to buy attention. Both tracks compound over time in ways that paid acquisition cannot replicate.</div>
+    </div>
+  <!-- TRACK 7: WEB3 COMMUNITY -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c7)"></div>
+      <div class="track-title">Track 7 — Web3 Community</div>
+      <div class="track-meta">New territory — Reap has never done this before · up for discussion · seed now · potential launch angle via hackathon · scale Q4</div>
+    </div>
+    <div class="track-body cols-3">
+      <div class="sub">
+        <div class="sub-title">Community Mapping — do now</div>
+        <div class="items">
+          <div class="item">Identify 2–3 spaces where FaaS technical buyers actually live</div>
+          <div class="item">Wallet/exchange engineering Discords (not Direct's CFO channels)</div>
+          <div class="item">AI/agentic builder communities — ahead of Agentic module launch</div>
+          <div class="item">Chain ecosystem servers (Solana, Base, Tron)</div>
+          <div class="item">Show up as a person, not a campaign</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Developer Presence — Q3–Q4</div>
+        <div class="items">
+          <div class="item">FaaS docs + SDK showing up natively in builder conversations</div>
+          <div class="item">Boris / TC as technical voices in relevant spaces</div>
+          <div class="item">Anna seeds Agentic builder community ahead of module launch</div>
+          <div class="item">Reap x Payward at Solana Breakpoint as activation event</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Ecosystem Co-build + Infrastructure — Q4</div>
+        <div class="items">
+          <div class="item">Chain teams (Solana, Base, Tron) as technical co-builders, not press-release partners</div>
+          <div class="item">"Adopt a corridor" pitch to chain treasuries</div>
+          <div class="item">Design partner feedback channel — prospects shape the roadmap</div>
+          <div class="item">Recurring Discord/Telegram office hours (placement clinic, no pitch)</div>
+          <div class="item flag">FaaS devrel hire or named part-time owner needed 🔴</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Design partner applications</span><span class="metric-target t3">≥ 5 by Q4</span></div><div class="metric-item"><span class="metric-name">Pipeline from community-sourced leads</span><span class="metric-target t3">TBD</span></div><div class="metric-item"><span class="metric-name">Contract value from community-sourced deals</span><span class="metric-target t3">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">Developer signups/inquiries from community</span><span class="metric-target t3">≥ 10/month by Q4</span></div><div class="metric-item"><span class="metric-name">Community engagement rate</span><span class="metric-target t3">≥ 15%</span></div><div class="metric-item"><span class="metric-name">Cost per community-sourced MQL</span><span class="metric-target t3">≤ $100</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag flag">Devrel / community hire — TBD 🔴</span>
+      <span class="owner-tag">Pearlyn — seeds until hire in place</span>
+      <span class="owner-tag">Boris / TC — developer-facing presence</span>
+      <span class="owner-tag">Anna — Agentic community</span>
+      <span class="owner-tag">Rachel / Nur — relationship signals</span>
+    </div>
+  </div>
+
+  <!-- TRACK 8: EXPANSION -->
+  <div class="track">
+    <div class="track-header">
+      <div class="track-dot" style="background:var(--c8)"></div>
+      <div class="track-title">Track 8 — Expansion / Cross-sell <span style="font-size:12px;font-weight:400;color:var(--muted)">— an extension of Customer Growth</span></div>
+      <div class="track-meta">Active now — targeting existing clients · installed base exists · CaaS clients are FaaS · Bitget Wallet live on CPMaaS · CG leads, not Sales</div>
+    </div>
+    <div class="track-body cols-4">
+      <div class="sub">
+        <div class="sub-title">Current Installed Base</div>
+        <div class="items">
+          <div class="item">All existing CaaS clients are FaaS clients by default — they don't know the full stack yet</div>
+          <div class="item">Bitget Wallet live on CPMaaS — first active FaaS client, first cross-sell candidate</div>
+          <div class="item">CaaS → FaaS awareness comms = fastest cross-sell motion available, costs nothing</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Trigger Layer</div>
+        <div class="items">
+          <div class="item">Volume threshold signals (card limits, high transaction frequency)</div>
+          <div class="item">Subsidiary or entity growth signals</div>
+          <div class="item">Support tickets asking for something another module solves</div>
+          <div class="item">Formal handover at Stage 8 (Activation) — first live transaction processed, ownership passes from Sales to CG (Joris). This is the defined trigger point per the Reap Sales Cycle.</div>
+          <div class="item">90-day post-activation check-in — Bitget Wallet is first candidate</div>
+          <div class="item">Annual KYC review as natural expansion conversation moment</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Content Layer</div>
+        <div class="items">
+          <div class="item">"You're already on FaaS — here's what else is available" (CaaS client comms)</div>
+          <div class="item">"You're live on Cards — here's what Payments unlocks"</div>
+          <div class="item">"You're live on Payments — here's what Crypto adds"</div>
+          <div class="item">Platform benefits: one bill · one integration · compliance flows automatically</div>
+          <div class="item">ICP-rooted expansion messaging per module pair (Anushka)</div>
+        </div>
+      </div>
+      <div class="sub">
+        <div class="sub-title">Immediate Actions</div>
+        <div class="items">
+          <div class="item">Communicate FaaS platform availability to all existing CaaS clients now</div>
+          <div class="item">Bitget Wallet 90-day check-in: what modules are they asking about next</div>
+          <div class="item">CaaS client list audit: top cross-sell candidates by module fit</div>
+          <div class="item">MSA updated to cover cross-sell across all modules</div>
+          <div class="item">Multi-module pricing packaged for existing clients — not list rate per add-on</div>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-row">
+      <div class="metrics-label">Outcomes &amp; Metrics</div>
+      <div class="metrics-grid">
+        <div>
+          <div class="metrics-col-label">Commercial</div>
+          <div class="metric-item"><span class="metric-name">Existing clients expanding to second module</span><span class="metric-target ">≥ 3 by Q4</span></div><div class="metric-item"><span class="metric-name">Cross-sell contract value</span><span class="metric-target ">TBD</span></div><div class="metric-item"><span class="metric-name">GP contribution: expansion vs net-new</span><span class="metric-target ">TBD</span></div><div class="metric-item"><span class="metric-name">Revenue per existing client (expansion delta)</span><span class="metric-target ">TBD</span></div>
+        </div>
+        <div>
+          <div class="metrics-col-label">Marketing</div>
+          <div class="metric-item"><span class="metric-name">CaaS → FaaS comms open rate</span><span class="metric-target ">≥ 40%</span></div><div class="metric-item"><span class="metric-name">Cross-sell conversion rate per module pair</span><span class="metric-target ">≥ 25%</span></div><div class="metric-item"><span class="metric-name">NPS delta post-expansion</span><span class="metric-target ">+5 points</span></div><div class="metric-item"><span class="metric-name">Time from trigger signal to expansion close</span><span class="metric-target ">≤ 45 days</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="owners-row">
+      <span class="owners-label">Owners</span>
+      <span class="owner-tag primary">Joris / CG — primary, existing client relationships + trigger signals</span>
+      <span class="owner-tag">Rachel / Nur — commercial motion, MSA</span>
+      <span class="owner-tag">Caleb — Revenue Ops, expansion tracking in HubSpot</span>
+      <span class="owner-tag">Pearlyn — CaaS→FaaS client comms, expansion content</span>
+      <span class="owner-tag">Anushka — expansion messaging per ICP</span>
+      <span class="owner-tag">Amelia — Cards/CPMaaS, Bitget Wallet</span>
+      <span class="owner-tag">Zi Xuan — Payments, first cross-sell module</span>
+    </div>
+  </div>
+</div>
+  </div>
+  
+</div>
+</div>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+
+Tier 1 — Active now, must be staffed</div>
+
+
+</div>
+
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--t1)"></div>Tier 1 — Active now, must be staffed</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--t2)"></div>Tier 2 — Existing Motions</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--t3)"></div>Tier 3 — Seeded, Q4 and beyond</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#E8544A"></div>Flagged item / blocker</div>
+  <div class="legend-item" style="margin-left:auto"><div class="legend-dot" style="background:var(--muted)"></div>Last updated: Jul 2026</div>
+</div>
+</body>
+</html>

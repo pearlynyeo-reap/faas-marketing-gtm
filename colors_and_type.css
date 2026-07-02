@@ -1,0 +1,369 @@
+/* =========================================================================
+   Reap Brand Design System — Colors & Type
+   ========================================================================= */
+
+/* ---- Fonts ---- */
+/* Primary display: PolySans (humanist sans — used for display headlines,
+   slide titles, UI labels) */
+/* Body + UI: PolySans (neutral, wide humanist sans) */
+@font-face {
+  font-family: 'PolySans';
+  src: url('fonts/PolySansTrial-Slim.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PolySans';
+  src: url('fonts/PolySansTrial-Neutral.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PolySans';
+  src: url('fonts/PolySansTrial-Median.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PolySans';
+  src: url('fonts/PolySansTrial-Bulky.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PolySans Inky — high-contrast "inked" weight for editorial display
+   (expressive, not-so-corporate) */
+@font-face {
+  font-family: 'PolySansInky';
+  src: url('fonts/PolySansTrial-Inky.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* PolySans Slim Italic — for emphasis words inside hero headlines & pullouts.
+   TODO: replace src with PolySansTrial-SlimItalic.otf when file is available;
+   until then the browser synthesises an oblique from Slim upright. */
+@font-face {
+  font-family: 'PolySans';
+  src: url('fonts/PolySansTrial-Slim.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Mono: PolySans Mono — for numerics, code, technical labels */
+@font-face {
+  font-family: 'PolySansMono';
+  src: url('fonts/PolySansTrial-NeutralMono.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PolySansMono';
+  src: url('fonts/PolySansTrial-MedianMono.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   TOKENS
+   ========================================================================== */
+:root {
+  /* --- Core brand --- */
+  --reap-teal: #71F7EC;       /* Hero — Teal.400 */
+  --reap-black: #000000;
+  --reap-white: #FFFFFF;
+  --reap-violet: #42006B;     /* Hero secondary — Violet.700 */
+  --reap-violet-bright: #7E22CE;  /* Used in app sidebar (Violet.500) */
+
+  /* --- Teal scale (primary) --- */
+  --teal-1000: #002926;
+  --teal-900:  #004D47;
+  --teal-800:  #007F76;
+  --teal-700:  #16A59B;
+  --teal-600:  #2CCBC0;
+  --teal-500:  #4DECE0;
+  --teal-400:  #71F7EC;  /* HERO */
+  --teal-300:  #91F9F1;
+  --teal-200:  #B8FBF5;
+  --teal-100:  #E3FFFD;
+
+  /* --- TealTinedGrey (branded neutrals — preferred) --- */
+  --ttg-1000: #0B0F0F;
+  --ttg-900:  #141C1C;
+  --ttg-800:  #2D3838;
+  --ttg-700:  #455454;
+  --ttg-600:  #5C7070;
+  --ttg-500:  #809494;
+  --ttg-400:  #A3B8B8;
+  --ttg-300:  #C7D6D6;
+  --ttg-200:  #E1EBEB;
+  --ttg-100:  #F2F7F7;
+
+  /* --- Pure grey (technical/data) --- */
+  --grey-1000: #000000;
+  --grey-900:  #1A1A1A;
+  --grey-800:  #333333;
+  --grey-700:  #4D4D4D;
+  --grey-600:  #666666;
+  --grey-500:  #808080;
+  --grey-400:  #999999;
+  --grey-300:  #CCCCCC;
+  --grey-200:  #E6E6E6;
+  --grey-100:  #F5F5F5;
+
+  /* --- Violet (premium / features) --- */
+  --violet-900: #2D004A;
+  --violet-800: #370059;
+  --violet-700: #42006B; /* HERO secondary */
+  --violet-600: #5F198E;
+  --violet-500: #7E22CE;
+  --violet-400: #A855F7;
+  --violet-300: #C084FC;
+  --violet-200: #E9D5FF;
+  --violet-100: #F5EFFF;
+
+  /* --- Semantic (info / warn / success) --- */
+  --blue-700:  #2A40A3;
+  --blue-500:  #4469FF;
+  --blue-300:  #94A8FF;
+  --peach-700: #B37E36;
+  --peach-500: #FFC680;
+  --peach-300: #FFDFB3;
+  --mint-700:  #00B36B;
+  --mint-500:  #60FFB0;
+  --mint-300:  #A2FFD1;
+
+  /* ================================================================
+     SEMANTIC TOKENS — use these in components, not raw palette values
+     ================================================================ */
+  /* Backgrounds */
+  --bg-page: var(--reap-black);       /* uplift 2026: black-led */
+  --bg-page-light: var(--reap-white); /* for email, docs, app */
+  --bg-surface: var(--ttg-900);
+  --bg-surface-light: var(--ttg-100);
+  --bg-muted: var(--ttg-100);
+
+  /* Foreground */
+  --fg-1: var(--reap-white);          /* primary on dark */
+  --fg-2: var(--ttg-300);             /* secondary on dark */
+  --fg-3: var(--ttg-500);             /* tertiary on dark */
+  --fg-1-light: var(--ttg-900);       /* primary on light */
+  --fg-2-light: var(--ttg-700);       /* secondary on light */
+  --fg-3-light: var(--ttg-500);       /* tertiary on light */
+
+  /* Accents */
+  --accent-primary: var(--teal-400);
+  --accent-secondary: var(--violet-700);
+  --accent-violet-bright: var(--violet-500);
+
+  /* States */
+  --success: var(--mint-500);
+  --warning: var(--peach-500);
+  --info: var(--blue-500);
+  --danger: #FF6B6B;
+
+  /* Borders */
+  --border-subtle: var(--ttg-200);
+  --border-default: var(--ttg-300);
+  --border-strong: var(--ttg-800);
+  --border-dark: var(--ttg-800);
+
+  /* Radii — small-container (buttons, inputs) + large-container (cards) */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;     /* cards, modals */
+  --r-xl: 28px;
+  --r-pill: 9999px;
+
+  /* Shadows — 7 levels */
+  --shadow-2xs: 0 1px 1px rgba(11, 15, 15, 0.04);
+  --shadow-xs:  0 1px 2px rgba(11, 15, 15, 0.06);
+  --shadow-sm:  0 2px 4px rgba(11, 15, 15, 0.06), 0 1px 2px rgba(11,15,15,0.04);
+  --shadow-md:  0 4px 8px rgba(11, 15, 15, 0.08), 0 2px 4px rgba(11,15,15,0.04);
+  --shadow-lg:  0 12px 24px rgba(11, 15, 15, 0.10), 0 4px 8px rgba(11,15,15,0.06);
+  --shadow-xl:  0 24px 48px rgba(11, 15, 15, 0.14), 0 8px 16px rgba(11,15,15,0.08);
+  --shadow-2xl: 0 40px 80px rgba(11, 15, 15, 0.18);
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  /* ================================================================
+     TYPE — Display (Litmus scale) + UI
+     ================================================================ */
+  --font-display: 'PolySans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-display-inky: 'PolySansInky', 'PolySans', -apple-system, sans-serif;
+  --font-text:    'PolySans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'PolySansMono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Display sizes (Litmus: line-height 1) */
+  --display-xl:  128px;  /* 8rem  */
+  --display-l:   96px;   /* 6rem  */
+  --display-m:   72px;   /* 4.5rem */
+  --display-s:   60px;   /* 3.75rem */
+  --display-t:   48px;   /* 3rem  */
+
+  /* Heading scale */
+  --h1: 44px;
+  --h2: 32px;
+  --h3: 24px;
+  --h4: 20px;
+
+  /* Body */
+  --text-lg:  18px;
+  --text-md:  16px;
+  --text-sm:  14px;
+  --text-xs:  12px;
+  --text-2xs: 10px;
+
+  /* Line heights */
+  --lh-tight:  1.05;
+  --lh-display: 1;
+  --lh-heading: 1.15;
+  --lh-body:   1.45;
+  --lh-loose:  1.6;
+
+  /* Weights */
+  --w-light:    300;
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-bold:     700;
+  --w-black:    900;
+
+  /* Durations / easings (uplift: <4s) */
+  --dur-fast: 120ms;
+  --dur-med:  240ms;
+  --dur-slow: 480ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   BASE + SEMANTIC ELEMENT STYLES
+   ========================================================================== */
+html, body {
+  font-family: var(--font-text);
+  font-weight: var(--w-regular);
+  font-size: var(--text-md);
+  line-height: var(--lh-body);
+  color: var(--fg-1-light);
+  background: var(--bg-page-light);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Dark (uplift 2026 default) variant */
+.reap-dark,
+.reap-dark body {
+  color: var(--fg-1);
+  background: var(--bg-page);
+}
+
+/* Display — uses PolySansInky per brand spec (hero headline role) */
+.display-xl, .display-l, .display-m, .display-s, .display-t {
+  font-family: var(--font-display-inky);
+  font-weight: var(--w-bold);
+  line-height: var(--lh-display);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.display-xl { font-size: var(--display-xl); letter-spacing: -0.02em; }
+.display-l  { font-size: var(--display-l);  letter-spacing: -0.02em; }
+.display-m  { font-size: var(--display-m); }
+.display-s  { font-size: var(--display-s); }
+.display-t  { font-size: var(--display-t); }
+
+/* Display emphasis — Slim Italics for expressive words inside hero headlines.
+   Usage: <h1 class="display-l"><em class="em-slim">Fast</em> payments.</h1> */
+.em-slim {
+  font-family: var(--font-display);
+  font-weight: var(--w-light);
+  font-style: italic;
+}
+
+/* Headings */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--h1);
+  line-height: var(--lh-heading);
+  font-weight: var(--w-bold);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-4);
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--h2);
+  line-height: var(--lh-heading);
+  font-weight: var(--w-bold);
+  letter-spacing: -0.005em;
+  margin: 0 0 var(--s-4);
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--h3);
+  line-height: var(--lh-heading);
+  font-weight: var(--w-medium);
+  margin: 0 0 var(--s-3);
+}
+h4, .h4 {
+  font-family: var(--font-text);
+  font-size: var(--h4);
+  line-height: var(--lh-heading);
+  font-weight: var(--w-medium);
+  margin: 0 0 var(--s-2);
+}
+
+/* Body */
+p { margin: 0 0 var(--s-4); line-height: var(--lh-body); }
+.text-lg  { font-size: var(--text-lg); line-height: var(--lh-body); }
+.text-md  { font-size: var(--text-md); line-height: var(--lh-body); }
+.text-sm  { font-size: var(--text-sm); line-height: var(--lh-body); }
+.text-xs  { font-size: var(--text-xs); line-height: var(--lh-body); letter-spacing: 0.02em; }
+.caption  { font-size: var(--text-xs); color: var(--fg-3-light); letter-spacing: 0.02em; text-transform: uppercase; }
+
+/* Mono + numerics — important for money */
+code, kbd, samp, .mono, .num {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' 1, 'ss01' 1;
+  font-variant-numeric: tabular-nums;
+}
+.num-display {
+  font-family: var(--font-display);
+  font-feature-settings: 'tnum' 1;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--w-bold);
+}
+
+/* Pullout — large editorial quote/stat block, Median weight.
+   Emphasis words use .em-slim (Slim Italic) inside.
+   Usage: <p class="pullout">"Great copy, <em class="em-slim">bold idea.</em>"</p> */
+.pullout {
+  font-family: var(--font-display);
+  font-weight: var(--w-medium);
+  font-size: var(--display-t);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Utility */
+.mono { font-family: var(--font-mono); letter-spacing: 0.01em; }
+.upper { text-transform: uppercase; letter-spacing: 0.04em; }
+.accent-teal { color: var(--accent-primary); }
+.accent-violet { color: var(--violet-500); }
